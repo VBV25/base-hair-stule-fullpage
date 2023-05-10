@@ -1,0 +1,332 @@
+.saidbar-nav__wrapper1 {
+    box-sizing: border-box;
+    position: fixed;
+    z-index: 200;
+    top: 0;
+    left: 0;
+    @include wiHe(15.6vw, 100%); //(294px, 100%)
+    padding: 5.278vh 0px 9.26vh; //57px 0px 100px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: max-content max-content max-content;
+    row-gap: auto;
+    align-content: space-between;
+    justify-content: center;
+    border-right: 2px solid $borderColor;
+}
+
+.sidebar-nav {
+    &__reserv-position {
+        @include wiHe(100%, 100%); //(294px, 100%)
+    }
+    //заголовок навигации
+    &__title {
+        text-align: center;
+        @include fontSize(30px, 36px, 500, $fontFamilyBarlow);
+    }
+    //навигация оболочка
+    &__page-nav-wrapper {
+        display: grid;
+        justify-content: center;
+    }
+    //блок с номерами страниц
+    &__page-container {
+        position: relative;
+    }
+    //текущая страница
+    &__page {
+        @include fontSize(54px, 65px, 500, $fontFamilyBarlow);
+        color: $pageNumberColorNavBar;
+    }
+    //прогресссбар страниц
+    &__progress-bar-container {
+        height: 22vh;
+        position: relative;
+        margin: 1.389vh 0px; //15px 0px;
+        display: grid;
+        grid-template-columns: 4px;
+        grid-template-rows: repeat(auto-fit, 1fr);
+        justify-self: center;
+        background-color: $lineNavNoActive;
+        border-radius: 2px;
+    }
+    &__progress-bar-line {
+        @include wiHe(4px, 100%); //(4px, 42px);
+        border-radius: 2px;
+    }
+    //кнопка
+    &__btn {
+        @include wiHe(58px, 79px); //(3.146vw, 7.455vh);
+        min-width: max-content;
+        min-height: max-content;
+        display: grid;
+        justify-self: center;
+        align-items: center;
+        justify-content: center;
+        border: 2px solid #b4977b;
+        border-radius: 50px;
+        img {
+            height: 2.686vh;
+        }
+    }
+}
+
+//всего страниц
+.last-page {
+    opacity: 0.3;
+    position: relative;
+}
+
+//доп стили
+.placeholder-page-nav {
+    position: absolute;
+    top: 50%;
+    left: -70px;
+    margin-top: -8px;
+    @include fontSize(16px, 16px, 300, $fontFamilyBarlow);
+    color: $lineNavbarActive;
+    text-align: center;
+    opacity: 0;
+}
+
+.page-number {
+    position: relative;
+}
+
+.page-number:hover .placeholder-page-nav {
+    opacity: 1;
+}
+
+
+/*-----------MEDIA----------*/
+
+
+/*----------PORTRAIT----------*/
+
+@media screen and (orientation: portrait) {
+    @media (max-width: 1280px) {
+        .saidbar-nav__wrapper1 {
+            @include wiHe(15vw, 100%);
+        }
+    }
+    @media (max-width: 1024px) {
+        .saidbar-nav__wrapper1 {
+            @include wiHe(15vw, 100%);
+            padding: 4vh 0px;
+        }
+        .sidebar-nav {
+            //заголовок навигации
+            &__title {
+                @include fontSize(24px, 24px, 500, $fontFamilyBarlow);
+            }
+            //текущая страница
+            &__page {
+                @include fontSize(46px, 46px, 500, $fontFamilyBarlow);
+            }
+            //прогресссбар страниц
+            &__progress-bar-container {
+                height: 35vh;
+                margin: 1.3vh 0px;
+            }
+            //кнопка
+            &__btn {
+                @include wiHe(40px, 59px);
+                img {
+                    height: 20px;
+                }
+            }
+        }
+        //доп стили
+        .placeholder-page-nav {
+            width: 50px;
+            left: -55px;
+            margin-top: -6px;
+            @include fontSize(12px, 14px, 300, $fontFamilyBarlow);
+        }
+    }
+    @media (max-width: 912px) {
+        .saidbar-nav__wrapper1 {
+            @include wiHe(16vw, 100%);
+            padding: 4vh 0px;
+        }
+        .sidebar-nav {
+            //заголовок навигации
+            &__title {
+                @include fontSize(30px, 30px, 500, $fontFamilyBarlow);
+            }
+            //текущая страница
+            &__page {
+                @include fontSize(50px, 50px, 500, $fontFamilyBarlow);
+            }
+            //прогресссбар страниц
+            &__progress-bar-container {
+                height: 30vh;
+                margin: 1.5vh 0px;
+            }
+            //кнопка
+            &__btn {
+                @include wiHe(50px, 69px);
+                img {
+                    height: 23px;
+                }
+            }
+        }
+        //доп стили
+        .placeholder-page-nav {
+            width: 50px;
+            left: -55px;
+            margin-top: -6px;
+            @include fontSize(12px, 14px, 300, $fontFamilyBarlow);
+        }
+    }
+    @media (max-width: 768px) {
+        .saidbar-nav__wrapper1 {
+            @include wiHe(90px, 100%);
+            padding: 3vh 0px;
+        }
+        .sidebar-nav {
+            //заголовок навигации
+            &__title {
+                @include fontSize(20px, 30px, 500, $fontFamilyBarlow);
+            }
+            //текущая страница
+            &__page {
+                @include fontSize(45px, 50px, 500, $fontFamilyBarlow);
+            }
+            //прогресссбар страниц
+            &__progress-bar-container {
+                height: 50vh;
+                margin: 1.5vh 0px;
+            }
+            //кнопка
+            &__btn {
+                @include wiHe(40px, 60px);
+                img {
+                    height: 23px;
+                }
+            }
+        }
+        //доп стили
+        .placeholder-page-nav {
+            width: 38px;
+            left: -37px;
+            margin-top: -16px;
+            @include fontSize(13px, 16px, 300, $fontFamilyBarlow);
+        }
+    }
+    @media (max-width: 480px) {
+        .saidbar-nav__wrapper1 {
+            @include wiHe(60px, 100%);
+            padding: 3vh 0px;
+        }
+        .sidebar-nav {
+            //заголовок навигации
+            &__title {
+                @include fontSize(14px, 20px, 500, $fontFamilyBarlow);
+            }
+            //текущая страница
+            &__page {
+                @include fontSize(35px, 40px, 500, $fontFamilyBarlow);
+            }
+            //прогресссбар страниц
+            &__progress-bar-container {
+                height: 50vh;
+                margin: 1.2vh 0px;
+            }
+            //кнопка
+            &__btn {
+                @include wiHe(30px, 50px);
+                img {
+                    height: 17px;
+                }
+            }
+        }
+        //доп стили
+        .placeholder-page-nav {
+            width: 27px;
+            left: -25px;
+            margin-top: -9px;
+            @include fontSize(9px, 9px, 300, $fontFamilyBarlow);
+        }
+    }
+}
+
+
+/*----------landscape----------*/
+
+@media screen and (orientation: landscape) {
+    @media (max-width: 1280px) {
+        .saidbar-nav__wrapper1 {
+            @include wiHe(15vw, 100%);
+        }
+    }
+    @media (max-width: 1024px) {
+        .saidbar-nav__wrapper1 {
+            @include wiHe(15vw, 100%);
+            padding: 4vh 0px;
+        }
+        .sidebar-nav {
+            //заголовок навигации
+            &__title {
+                @include fontSize(24px, 24px, 500, $fontFamilyBarlow);
+            }
+            //текущая страница
+            &__page {
+                @include fontSize(46px, 46px, 500, $fontFamilyBarlow);
+            }
+            //прогресссбар страниц
+            &__progress-bar-container {
+                height: 35vh;
+                margin: 1.3vh 0px;
+            }
+            //кнопка
+            &__btn {
+                @include wiHe(40px, 59px);
+                img {
+                    height: 20px;
+                }
+            }
+        }
+        //доп стили
+        .placeholder-page-nav {
+            width: 50px;
+            left: -55px;
+            margin-top: -6px;
+            @include fontSize(12px, 14px, 300, $fontFamilyBarlow);
+        }
+    }
+    @media (max-width: 896px) {
+        .saidbar-nav__wrapper1 {
+            @include wiHe(80px, 100%);
+        }
+        .sidebar-nav {
+            //заголовок навигации
+            &__title {
+                @include fontSize(14px, 24px, 500, $fontFamilyBarlow);
+            }
+            //текущая страница
+            &__page {
+                @include fontSize(30px, 30px, 500, $fontFamilyBarlow);
+            }
+            //прогресссбар страниц
+            &__progress-bar-container {
+                height: 45vh;
+                margin: 1vh 0px;
+            }
+            //кнопка
+            &__btn {
+                @include wiHe(30px, 45px);
+                img {
+                    height: 16px;
+                }
+            }
+        }
+        //доп стили
+        .placeholder-page-nav {
+            width: 30px;
+            left: -30px;
+            margin-top: -11px;
+            @include fontSize(9px, 11px, 300, $fontFamilyBarlow);
+        }
+    }
+}

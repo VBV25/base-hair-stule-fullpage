@@ -1,0 +1,420 @@
+.header {
+    position: fixed;
+    z-index: 180;
+    @include wiHe(33.783vw, max-content); //655px
+    @include riTo(6.15vh, 8.523vw); //(61px,162px)
+    &__wrapper {
+        display: grid;
+        grid-auto-flow: column;
+        align-content: center;
+        justify-content: space-between;
+        @include wiHe(100%, max-content);
+    }
+    &__mobile {
+        display: none;
+    }
+    &__nav {
+        display: grid;
+        grid-auto-flow: column;
+        gap: 2.4vw; //59px
+    }
+    &__link {
+        display: grid;
+        align-content: center;
+        text-align: center;
+        @include fontSize(18px, 22px, 400, $fontFamilyBarlow);
+        color: $blackColor;
+    }
+    &__basket {
+        display: grid;
+        align-content: center;
+        img {
+            width: 26px;
+        }
+    }
+}
+
+
+/*-----------MEDIA----------*/
+
+
+/*----------PORTRAIT----------*/
+
+@media screen and (orientation: portrait) {
+    @media (max-width: 1280px) {
+        .header {
+            @include wiHe(34vw, max-content);
+            @include riTo(6.15vh, 8vw);
+            &__nav {
+                gap: 1.5vw;
+            }
+            &__link {
+                @include fontSize(17px, 20px, 500, $fontFamilyBarlow);
+                color: $blackColor;
+            }
+            &__basket {
+                img {
+                    width: 22px;
+                }
+            }
+        }
+    }
+    @media (max-width: 1180px) {
+        .header {
+            &__link {
+                @include fontSize(15px, 20px, 500, $fontFamilyBarlow);
+            }
+        }
+    }
+    @media (max-width: 1024px) {
+        .header {
+            @include wiHe(40vw, max-content);
+            @include riTo(4vh, 6vw);
+            &__nav {
+                gap: 2vw;
+            }
+            &__link {
+                @include fontSize(15px, 20px, 500, $fontFamilyBarlow);
+            }
+            &__basket {
+                img {
+                    width: 22px;
+                }
+            }
+        }
+    }
+    @media (max-width: 1024px) and (min-height: 1025px) {
+        .header {
+            @include riTo(4vh, 3vw);
+            &__nav {
+                gap: 1.5vw;
+            }
+            &__link {
+                @include fontSize(17px, 20px, 500, $fontFamilyBarlow);
+            }
+        }
+    }
+    @media (max-width: 912px) {
+        .header {
+            @include wiHe(80vw, max-content);
+            @include riTo(4vh, 2vw);
+            &__wrapper {
+                background-color: $whiteColorOpacity;
+            }
+            &__nav {
+                gap: 5vw;
+            }
+            &__link {
+                @include fontSize(21px, 25px, 500, $fontFamilyBarlow);
+            }
+            &__basket {
+                img {
+                    width: 28px;
+                }
+            }
+        }
+    }
+    @media (max-width: 768px) {
+        .header {
+            @include wiHe(100%, max-content);
+            @include riTo(3vh, 0);
+            padding: 0px 8px 0px 98px;
+            &__nav {
+                gap: 3vw;
+            }
+            &__link {
+                @include fontSize(15px, 25px, 500, $fontFamilyBarlow);
+            }
+            &__basket {
+                img {
+                    width: 25px;
+                }
+            }
+        }
+    }
+    @media (max-width: 480px) {
+        .header {
+            padding: 0px 4px 0px 64px;
+            @include riTo(2vh, 0vw);
+            &__wrapper {
+                position: relative;
+                justify-content: end;
+                @include wiHe(100%, max-content);
+            }
+            &__mobile {
+                display: grid;
+                align-content: center;
+                position: absolute;
+                z-index: 150;
+                @include wiHe(max-content);
+                margin-left: 8px;
+                @include fontSize(18px, 22px, 500, $fontFamilyBarlow);
+            }
+            &__nav {
+                @include wiHe(102vw, 102vh);
+                padding: 80px 12px 2vh 95px;
+                position: absolute;
+                top: -200vh;
+                left: -68px;
+                display: grid;
+                grid-auto-flow: row;
+                grid-template-rows: max-content;
+                grid-auto-rows: max-content;
+                background-color: $whiteColor;
+                gap: 20px;
+                transition: top 1s ease 0s;
+            }
+            &__link {
+                height: max-content;
+                align-content: start;
+                text-align: start;
+                @include fontSize(18px, 22px, 400, $fontFamilyBarlow);
+            }
+            &__basket {
+                img {
+                    width: 24px;
+                }
+            }
+        }
+    }
+}
+
+
+/*----------landscape----------*/
+
+@media screen and (orientation: landscape) {
+    @media (max-width: 1280px) {
+        .header {
+            @include wiHe(34vw, max-content);
+            @include riTo(6.15vh, 8vw);
+            &__nav {
+                gap: 1.5vw;
+            }
+            &__link {
+                @include fontSize(17px, 20px, 500, $fontFamilyBarlow);
+                color: $blackColor;
+            }
+            &__basket {
+                img {
+                    width: 22px;
+                }
+            }
+        }
+    }
+    @media (max-width: 1180px) {
+        .header {
+            &__link {
+                @include fontSize(15px, 20px, 500, $fontFamilyBarlow);
+            }
+        }
+    }
+    @media (max-width: 1024px) {
+        .header {
+            @include wiHe(40vw, max-content);
+            @include riTo(4vh, 6vw);
+            &__nav {
+                gap: 2vw;
+            }
+            &__link {
+                @include fontSize(15px, 20px, 500, $fontFamilyBarlow);
+            }
+            &__basket {
+                img {
+                    width: 22px;
+                }
+            }
+        }
+    }
+    @media (max-width: 896px) {
+        .header {
+            @include wiHe(50vw, max-content);
+            @include riTo(2vh, 10px);
+            &__nav {
+                gap: 2vw;
+            }
+            &__link {
+                @include fontSize(13px, 20px, 500, $fontFamilyBarlow);
+            }
+            &__basket {
+                img {
+                    width: 22px;
+                }
+            }
+        }
+    }
+    @media (max-width: 480px) {
+        .header {
+            width: 100vw;
+            padding: 0px 4px 0px 84px;
+            @include riTo(2vh, 0vw);
+            &__wrapper {
+                position: relative;
+                justify-content: end;
+                @include wiHe(100%, max-content);
+                background-color: $whiteColorOpacity;
+            }
+            &__mobile {
+                display: grid;
+                align-content: center;
+                position: absolute;
+                z-index: 150;
+                @include wiHe(max-content);
+                margin-left: 8px;
+                @include fontSize(18px, 22px, 500, $fontFamilyBarlow);
+            }
+            &__nav {
+                @include wiHe(102vw, 102vh);
+                padding: 80px 12px 2vh 110px;
+                position: absolute;
+                top: -200vh;
+                left: -88px;
+                display: grid;
+                grid-auto-flow: row;
+                grid-template-rows: max-content;
+                grid-auto-rows: max-content;
+                background-color: $whiteColor;
+                gap: 20px;
+                transition: top 1s ease 0s;
+            }
+            &__link {
+                height: max-content;
+                align-content: start;
+                text-align: start;
+                @include fontSize(18px, 22px, 400, $fontFamilyBarlow);
+            }
+            &__basket {
+                img {
+                    width: 24px;
+                }
+            }
+        }
+    }
+}
+
+
+/*-------------------------------------*/
+
+
+/*-------FOOTER--------*/
+
+.footer {
+    position: fixed;
+    z-index: 150;
+    @include wiHe(26.875vw, max-content);
+    @include leBo(9.26vh, 24.124vw);
+    display: grid;
+    grid-auto-flow: column;
+    align-content: center;
+    &__nav {
+        display: grid;
+        justify-content: space-between;
+        grid-auto-flow: column;
+    }
+    &__link {
+        display: grid;
+        text-transform: uppercase;
+        @include fontSize(14px, 17px, 500, $fontFamilyBarlow);
+        color: $blackColor;
+    }
+}
+
+
+/*-----------MEDIA----------*/
+
+
+/*----------PORTRAIT----------*/
+
+@media screen and (orientation: portrait) {
+    @media (max-width: 1280px) {
+        .footer {
+            @include wiHe(26vw, max-content);
+            @include leBo(9vh, 24vw);
+        }
+    }
+    @media (max-width: 1024px) {
+        .footer {
+            @include wiHe(26vw, max-content);
+            @include leBo(7vh, 21vw);
+            &__link {
+                @include fontSize(12px, 14px, 500, $fontFamilyBarlow);
+            }
+        }
+    }
+    @media (max-width: 1024px) and (min-height: 1025px) {
+        .footer {
+            @include wiHe(34vw, max-content);
+            @include leBo(7vh, 18vw);
+            &__link {
+                @include fontSize(14px, 14px, 500, $fontFamilyBarlow);
+            }
+        }
+    }
+    @media (max-width: 912px) {
+        .footer {
+            @include wiHe(49vw, max-content);
+            @include leBo(5vh, 18vw);
+            &__link {
+                @include fontSize(16px, 17px, 500, $fontFamilyBarlow);
+            }
+        }
+    }
+    @media (max-width: 768px) {
+        .footer {
+            @include wiHe(48vw, max-content);
+            @include leBo(3vh, 98px);
+            &__link {
+                @include fontSize(12px, 12px, 500, $fontFamilyBarlow);
+            }
+        }
+    }
+    @media (max-width: 480px) {
+        .footer {
+            @include wiHe(100%, max-content);
+            @include leBo(1.5vh, 0);
+            padding-left: 64px;
+            padding-right: 4px;
+            &__link {
+                @include fontSize(10px, 12px, 500, $fontFamilyBarlow);
+            }
+        }
+    }
+}
+
+
+/*----------landscape----------*/
+
+@media screen and (orientation: landscape) {
+    @media (max-width: 1280px) {
+        .footer {
+            @include wiHe(26vw, max-content);
+            @include leBo(9vh, 24vw);
+        }
+    }
+    @media (max-width: 1024px) {
+        .footer {
+            @include wiHe(26vw, max-content);
+            @include leBo(7vh, 21vw);
+            &__link {
+                @include fontSize(12px, 14px, 500, $fontFamilyBarlow);
+            }
+        }
+    }
+    @media (max-width: 896px) {
+        .footer {
+            @include wiHe(29vw, max-content);
+            @include leBo(7vh, 90px);
+            &__link {
+                @include fontSize(9px, 14px, 500, $fontFamilyBarlow);
+            }
+        }
+    }
+    @media (max-width: 480px) {
+        .footer {
+            @include wiHe(45vw, max-content);
+            @include leBo(7vh, 84px);
+            &__link {
+                @include fontSize(9px, 14px, 500, $fontFamilyBarlow);
+            }
+        }
+    }
+}

@@ -1,0 +1,826 @@
+//обнуление
+@import 'null-style';
+//переменные,шаблоны,миксины
+@import 'base';
+//навигация-сайдбар
+@import 'sidebar-nav';
+//хедер и футер
+@import 'header-footer';
+//
+
+/*-----общие-стили----*/
+
+body {
+    overflow-x: hidden;
+}
+
+.active-line-nav {
+    cursor: pointer;
+    position: absolute !important;
+    z-index: 200;
+    width: 4px;
+    min-height: 1vh;
+    top: 0;
+    left: 0;
+    border-radius: 2px;
+    background-color: $lineNavbarActive;
+    transition: all 1s ease 0s;
+}
+
+.active-page-nav {
+    position: relative !important;
+    opacity: 1;
+}
+
+.active-link-header {
+    color: $lineNavbarActive;
+}
+
+.hidden {
+    overflow: hidden;
+}
+
+.active-mobile-menu {
+    top: -3vh;
+    transition: top 1s ease 0s;
+}
+
+
+/*---скролл поблочно---*/
+
+.scroller {
+    height: 100vh;
+    overflow-x: hidden;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+}
+
+.scroller::-webkit-scrollbar {
+    width: 0px;
+}
+
+.scroller section {
+    scroll-snap-align: start;
+}
+
+
+/*----контент----*/
+
+.section {
+    position: relative;
+    z-index: 15;
+    @include wiHe(100vw, 100vh);
+}
+
+.site-content {
+    @include wiHe(100vw);
+    padding: 0px 8.523vw 9.26vh 24.124vw; //0px 162px 100px 458px;
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: 26.875vw 33.783vw; //517px 650px
+    grid-template-rows: 1fr;
+    justify-content: space-between;
+    &__photo {
+        position: relative;
+        @include wiHe(100%, 74.0745vh); //(517px, 800px);
+        img {
+            @include wiHe;
+        }
+        &::before {
+            content: 'The Best Hair Style 2021';
+            position: absolute;
+            display: grid;
+            align-content: center;
+            @include wiHe(100%, 10.834vh); //(517px, 117px);
+            @include leBo;
+            text-align: center;
+            @include fontSize(28px, 34px, 500, $fontFamilyBarlow);
+            color: $whiteColor;
+            background: rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
+        }
+    }
+    &__content-container {
+        display: grid;
+        padding-top: 22.777vh; //246px
+        gap: 3.7037vh; //40px
+    }
+}
+
+
+/*-----------MEDIA----------*/
+
+
+/*----------PORTRAIT----------*/
+
+@media screen and (orientation: portrait) {
+    @media (max-width: 1280px) {
+        .section {
+            @include wiHe(100vw, 100vh);
+            grid-template-columns: 15vw 1fr;
+        }
+        .site-content {
+            @include wiHe(100vw);
+            padding: 0px 8vw 7vh 24vw;
+            grid-template-columns: 26vw 34vw;
+            grid-template-rows: 1fr;
+            &__photo {
+                @include wiHe(100%, 72vh);
+                &::before {
+                    @include fontSize(28px, 34px, 500, $fontFamilyBarlow);
+                }
+            }
+            &__content-container {
+                padding-top: 18vh;
+                gap: 3vh;
+            }
+        }
+    }
+    @media (max-width: 1180px) {
+        .site-content {
+            &__photo {
+                @include wiHe(100%, 70vh);
+                &::before {
+                    @include fontSize(25px, 30px, 500, $fontFamilyBarlow);
+                }
+            }
+            &__content-container {
+                padding-top: 17vh;
+            }
+        }
+    }
+    @media (max-width: 1024px) {
+        .site-content {
+            padding: 0px 6vw 9vh 21vw;
+            grid-template-columns: 26vw 40vw;
+            grid-template-rows: 1fr;
+            &__photo {
+                @include wiHe(100%, 68vh);
+                &::before {
+                    @include fontSize(20px, 23px, 500, $fontFamilyBarlow);
+                }
+            }
+            &__content-container {
+                padding-top: 11vh;
+            }
+        }
+    }
+    @media (max-width: 1024px) and (min-height: 1025px) {
+        .site-content {
+            padding: 0px 3vw 9vh 18vw;
+            grid-template-columns: 34vw 40vw;
+            grid-template-rows: 1fr;
+            &__photo {
+                @include wiHe(100%, 58vh);
+                &::before {
+                    @include fontSize(20px, 23px, 500, $fontFamilyBarlow);
+                }
+            }
+            &__content-container {
+                padding-top: 23vh;
+            }
+        }
+    }
+    @media (max-width: 912px) {
+        .site-content {
+            padding: 0px 2vw 5vh 18vw;
+            display: grid;
+            grid-auto-flow: row;
+            grid-template-columns: 1fr;
+            grid-template-rows: max-content max-content;
+            justify-content: center;
+            &__photo {
+                display: grid;
+                justify-self: center;
+                @include wiHe(38vw, auto);
+                &::before {
+                    @include wiHe(100%, 8vh);
+                    @include fontSize(28px, 34px, 500, $fontFamilyBarlow);
+                }
+            }
+            &__content-container {
+                padding-top: 1vh;
+                gap: 1.5vh;
+            }
+        }
+    }
+    @media (max-width: 768px) {
+        .site-content {
+            padding: 0px 8px 5vh 98px;
+            &__photo {
+                @include wiHe(max-content, max-content);
+                img {
+                    @include wiHe(auto, 35vh);
+                }
+                &::before {
+                    @include wiHe(100%, 6vh);
+                    @include fontSize(18px, 24px, 500, $fontFamilyBarlow);
+                }
+            }
+        }
+    }
+    @media (max-width: 768px) and (min-height: 1024px) {
+        .site-content {
+            padding: 0px 2vw 5vh 15vw;
+            &__photo {
+                @include wiHe(max-content, max-content);
+                img {
+                    @include wiHe(auto, 44vh);
+                }
+                &::before {
+                    @include wiHe(100%, 8vh);
+                    @include fontSize(22px, 30px, 500, $fontFamilyBarlow);
+                }
+            }
+        }
+    }
+    @media (max-width: 480px) {
+        .site-content {
+            padding: 0px 8px 5vh 64px;
+            grid-template-rows: max-content 1fr;
+            &__photo {
+                justify-self: start;
+                @include wiHe(max-content, max-content);
+                margin-left: 4px;
+                img {
+                    @include wiHe(auto, 34vh);
+                }
+                &::before {
+                    @include wiHe(100%, 6vh);
+                    @include fontSize(10px, 12px, 500, $fontFamilyBarlow);
+                }
+            }
+            &__content-container {
+                padding-top: 0.5vh;
+                gap: 1vh;
+            }
+        }
+    }
+    @media (max-width: 480px) and (min-height: 740px) {
+        .site-content {
+            &__photo {
+                &::before {
+                    @include fontSize(13px, 14px, 500, $fontFamilyBarlow);
+                }
+            }
+            &__content-container {
+                padding-top: 1vh;
+                gap: 1.5vh;
+            }
+        }
+    }
+}
+
+
+/*----------landscape----------*/
+
+@media screen and (orientation: landscape) {
+    @media (max-width: 1280px) {
+        .section {
+            @include wiHe(100vw, 100vh);
+            grid-template-columns: 15vw 1fr;
+        }
+        .site-content {
+            @include wiHe(100vw);
+            padding: 0px 8vw 7vh 24vw;
+            grid-template-columns: 26vw 34vw;
+            &__photo {
+                @include wiHe(100%, 72vh);
+                &::before {
+                    @include fontSize(28px, 34px, 500, $fontFamilyBarlow);
+                }
+            }
+            &__content-container {
+                padding-top: 18vh;
+                gap: 3vh;
+            }
+        }
+    }
+    @media (max-width: 1180px) {
+        .site-content {
+            &__photo {
+                @include wiHe(100%, 70vh);
+                &::before {
+                    @include fontSize(25px, 30px, 500, $fontFamilyBarlow);
+                }
+            }
+            &__content-container {
+                padding-top: 17vh;
+            }
+        }
+    }
+    @media (max-width: 1024px) {
+        .site-content {
+            padding: 0px 6vw 9vh 21vw;
+            grid-template-columns: 26vw 40vw;
+            &__photo {
+                @include wiHe(100%, 68vh);
+                &::before {
+                    @include fontSize(20px, 23px, 500, $fontFamilyBarlow);
+                }
+            }
+            &__content-container {
+                padding-top: 11vh;
+            }
+        }
+    }
+    @media (max-width: 896px) {
+        .site-content {
+            padding: 0px 10px 4vh 90px;
+            grid-template-columns: 29vw 50vw;
+            &__photo {
+                @include wiHe(100%, 72vh);
+                &::before {
+                    @include wiHe(100%, max-content);
+                    padding: 1.5vh 0px;
+                    @include fontSize(17px, 19px, 500, $fontFamilyBarlow);
+                }
+            }
+            &__content-container {
+                padding-top: 12vh;
+                gap: 1.5vh;
+            }
+        }
+    }
+    @media (max-width: 480px) {
+        .site-content {
+            padding: 0px 4px 4vh 84px;
+            grid-template-columns: 28vw 50vw;
+            &__photo {
+                @include wiHe(100%, 70vh);
+                &::before {
+                    @include fontSize(14px, 19px, 500, $fontFamilyBarlow);
+                }
+            }
+        }
+    }
+}
+
+
+/*-----------------------------------------*/
+
+
+/*-------Блок с текстом----*/
+
+.content-container {
+    @include wiHe(100%, max-content);
+    &__title {
+        height: max-content;
+        @include fontSize(64px, 77px, 600, $fontFamilyBarlow);
+    }
+    &__text {
+        height: max-content;
+        max-height: 290px;
+        @include fontSize(18px, 32.31px, 400, $fontFamilyBarlow);
+        overflow-y: scroll;
+        &::-webkit-scrollbar {
+            width: 4px;
+            border-radius: 20px;
+        }
+        &::-webkit-scrollbar-track {
+            background: $lineNavNoActive;
+        }
+        &::-webkit-scrollbar-thumb {
+            background-color: $lineNavbarActive;
+            border-radius: 2px;
+        }
+    }
+    &__btn {
+        @include wiHe(max-content, 5.556vh); //(178px, 60px);
+        padding: 1.39vh 1.663vw;
+        display: grid;
+        align-content: center;
+        justify-content: center;
+        background: $borderBtnNav;
+        border-radius: 50px;
+        color: $whiteColor;
+        @include fontSize(18px, 179.5%, 400, $fontFamilyBarlow);
+    }
+}
+
+
+/*----------------MEDIA-----------*/
+
+
+/*----------PORTRAIT----------*/
+
+@media screen and (orientation: portrait) {
+    @media (max-width: 1280px) {
+        .content-container {
+            &__title {
+                @include fontSize(62px, 72px, 600, $fontFamilyBarlow);
+            }
+        }
+    }
+    @media (max-width: 1180px) {
+        .content-container {
+            &__title {
+                @include fontSize(52px, 62px, 600, $fontFamilyBarlow);
+            }
+        }
+    }
+    @media (max-width: 1024px) {
+        .content-container {
+            &__title {
+                @include fontSize(42px, 50px, 600, $fontFamilyBarlow);
+            }
+            &__text {
+                @include fontSize(17px, 21px, 400, $fontFamilyBarlow);
+            }
+            &__btn {
+                @include wiHe(max-content, max-content);
+                padding: 1.5vh 1.7vw;
+                @include fontSize(16px, 130%, 400, $fontFamilyBarlow);
+            }
+        }
+    }
+    @media (max-width: 1024px) and (min-height: 1025px) {
+        .content-container {
+            &__title {
+                @include fontSize(48px, 54px, 600, $fontFamilyBarlow);
+            }
+            &__text {
+                @include fontSize(19px, 23px, 400, $fontFamilyBarlow);
+            }
+            &__btn {
+                @include wiHe(max-content, max-content);
+                padding: 1.5vh 1.7vw;
+                @include fontSize(16px, 130%, 400, $fontFamilyBarlow);
+            }
+        }
+    }
+    @media (max-width: 912px) {
+        .content-container {
+            &__title {
+                @include fontSize(48px, 55px, 600, $fontFamilyBarlow);
+            }
+            &__text {
+                @include fontSize(21px, 28px, 400, $fontFamilyBarlow);
+            }
+            &__btn {
+                @include fontSize(20px, 130%, 400, $fontFamilyBarlow);
+            }
+        }
+    }
+    @media (max-width: 768px) {
+        .content-container {
+            &__title {
+                @include fontSize(32px, 32px, 600, $fontFamilyBarlow);
+            }
+            &__text {
+                @include fontSize(16px, 20px, 400, $fontFamilyBarlow);
+            }
+            &__btn {
+                @include fontSize(16px, 130%, 400, $fontFamilyBarlow);
+            }
+        }
+    }
+    @media (max-width: 480px) {
+        .content-container {
+            &__title {
+                @include fontSize(22px, 22px, 600, $fontFamilyBarlow);
+            }
+            &__text {
+                @include fontSize(14px, 16px, 400, $fontFamilyBarlow);
+            }
+            &__btn {
+                @include fontSize(12px, 130%, 400, $fontFamilyBarlow);
+            }
+        }
+    }
+    @media (max-width: 480px) and (min-height: 740px) {
+        .content-container {
+            &__title {
+                @include fontSize(26px, 26px, 600, $fontFamilyBarlow);
+            }
+            &__text {
+                @include fontSize(15px, 17px, 400, $fontFamilyBarlow);
+            }
+            &__btn {
+                @include fontSize(13px, 130%, 400, $fontFamilyBarlow);
+            }
+        }
+    }
+}
+
+
+/*----------landscape----------*/
+
+@media screen and (orientation: landscape) {
+    @media (max-width: 1280px) {
+        .content-container {
+            &__title {
+                @include fontSize(62px, 72px, 600, $fontFamilyBarlow);
+            }
+        }
+    }
+    @media (max-width: 1180px) {
+        .content-container {
+            &__title {
+                @include fontSize(52px, 62px, 600, $fontFamilyBarlow);
+            }
+        }
+    }
+    @media (max-width: 1024px) {
+        .content-container {
+            &__title {
+                @include fontSize(42px, 50px, 600, $fontFamilyBarlow);
+            }
+            &__text {
+                @include fontSize(17px, 21px, 400, $fontFamilyBarlow);
+            }
+            &__btn {
+                @include wiHe(max-content, max-content);
+                padding: 1.5vh 1.7vw;
+                @include fontSize(16px, 130%, 400, $fontFamilyBarlow);
+            }
+        }
+    }
+    @media (max-width: 800px) {
+        .content-container {
+            &__title {
+                @include fontSize(28px, 30px, 600, $fontFamilyBarlow);
+            }
+            &__text {
+                @include fontSize(15px, 17px, 400, $fontFamilyBarlow);
+            }
+            &__btn {
+                @include wiHe(max-content, max-content);
+                padding: 1.5vh 1.7vw;
+                @include fontSize(13px, 130%, 400, $fontFamilyBarlow);
+            }
+        }
+    }
+    @media (max-width: 480px) {
+        .content-container {
+            &__title {
+                @include fontSize(26px, 30px, 600, $fontFamilyBarlow);
+            }
+            &__text {
+                @include fontSize(14px, 17px, 400, $fontFamilyBarlow);
+            }
+        }
+    }
+}
+
+
+/*----*/
+
+@media (max-height: 580px) {
+    .content-container {
+        &__text {
+            max-height: 200px;
+        }
+    }
+}
+
+@media (max-height: 400px) {
+    .content-container {
+        &__text {
+            max-height: 120px;
+        }
+    }
+}
+
+
+/*-----------------------------------------*/
+
+
+/*----Номер страницы---*/
+
+.page-number-big {
+    position: absolute;
+    z-index: 10;
+    @include wiHe(max-content, max-content);
+    display: block;
+    padding: 0;
+    @include riBo(5.833vh, 7.75vw); //(63px,149px)
+    color: $whiteColor;
+    @include fontSize(200px, 240px, 600, $fontFamilyBarlow);
+    @include textShadowPageNumber;
+}
+
+
+/*---decoration----*/
+
+.circle-1 {
+    z-index: -10;
+    position: fixed;
+    @include riBo(-5.926vh, 34.172vw); //(-64px,657.46px)
+    .circle {
+        @include wiHe(145px, 145px);
+    }
+}
+
+.circle-2 {
+    z-index: -10;
+    position: fixed;
+    @include riBo(28.303vh, 15.374vw); //(327.27px,295.79px)
+    .circle {
+        @include wiHe(116.46px, 116.46px);
+    }
+}
+
+.circle-3 {
+    z-index: -10;
+    position: fixed;
+    @include riTo(21.717vh, -2.3vw); //(234.54px,-64px)
+    .circle {
+        @include wiHe(145px, 145px);
+    }
+}
+
+
+/*-----------MEDIA---------------*/
+
+
+/*----------PORTRAIT----------*/
+
+@media screen and (orientation: portrait) {
+    @media (max-width: 1280px) {
+        .page-number-big {
+            @include fontSize(170px, 170px, 600, $fontFamilyBarlow);
+        }
+    }
+    @media (max-width: 1024px) {
+        .page-number-big {
+            @include riBo(3vh, 4.5vw);
+            @include fontSize(150px, 150px, 600, $fontFamilyBarlow);
+        }
+        .circle-1 {
+            @include riBo(-13vh, 34.172vw);
+            .circle {
+                @include wiHe(145px, 145px);
+            }
+        }
+        .circle-2 {
+            @include riBo(22vh, 15vw);
+            .circle {
+                @include wiHe(116.46px, 116.46px);
+            }
+        }
+        .circle-3 {
+            @include riTo(27vh, -7vw);
+            .circle {
+                @include wiHe(145px, 145px);
+            }
+        }
+    }
+    @media (max-width: 1024px) and (min-height: 1025px) {
+        .page-number-big {
+            @include riBo(3vh, 2vw);
+            @include fontSize(200px, 200px, 600, $fontFamilyBarlow);
+        }
+        .circle-1 {
+            @include riBo(-13vh, 34.172vw);
+            .circle {
+                @include wiHe(145px, 145px);
+            }
+        }
+        .circle-2 {
+            @include riBo(22vh, 15vw);
+            .circle {
+                @include wiHe(116.46px, 116.46px);
+            }
+        }
+        .circle-3 {
+            @include riTo(27vh, -7vw);
+            .circle {
+                @include wiHe(145px, 145px);
+            }
+        }
+    }
+    @media (max-width: 912px) {
+        .page-number-big {
+            @include riBo(2vh, 1.7vw);
+            @include fontSize(180px, 180px, 600, $fontFamilyBarlow);
+        }
+        .circle-1 {
+            @include riBo(-7vh, 50vw);
+            .circle {
+                @include wiHe(160px, 160px);
+            }
+        }
+        .circle-2 {
+            @include riBo(25vh, 20vw);
+            .circle {
+                @include wiHe(160px, 160px);
+            }
+        }
+        .circle-3 {
+            @include riTo(27vh, -7vw);
+            .circle {
+                @include wiHe(160px, 160px);
+            }
+        }
+    }
+    @media (max-width: 768px) {
+        .page-number-big {
+            @include riBo(-0.5vh, 8px);
+            @include fontSize(120px, 120px, 600, $fontFamilyBarlow);
+        }
+    }
+    @media (max-width: 480px) {
+        .page-number-big {
+            @include riTo(9vh, 4px);
+            bottom: unset;
+            @include fontSize(100px, 100px, 600, $fontFamilyBarlow);
+        }
+        .circle-1 {
+            @include riBo(-50px, 50vw);
+            .circle {
+                @include wiHe(100px, 100px);
+            }
+        }
+        .circle-2 {
+            @include riBo(35vh, 20vw);
+            .circle {
+                @include wiHe(70px, 70px);
+            }
+        }
+        .circle-3 {
+            @include riTo(20vh, -50px);
+            .circle {
+                @include wiHe(100px, 100px);
+            }
+        }
+    }
+    @media (max-width: 480px) and (min-height: 740px) {
+        .page-number-big {
+            @include riBo(3.2vh, 8px);
+            top: unset;
+            @include fontSize(110px, 110px, 600, $fontFamilyBarlow);
+        }
+    }
+}
+
+
+/*----------landscape----------*/
+
+@media screen and (orientation: landscape) {
+    @media (max-width: 1280px) {
+        .page-number-big {
+            @include fontSize(170px, 170px, 600, $fontFamilyBarlow);
+        }
+    }
+    @media (max-width: 1024px) {
+        .page-number-big {
+            @include riBo(3vh, 4.5vw);
+            @include fontSize(150px, 150px, 600, $fontFamilyBarlow);
+        }
+        .circle-1 {
+            @include riBo(-13vh, 34.172vw);
+            .circle {
+                @include wiHe(145px, 145px);
+            }
+        }
+        .circle-2 {
+            @include riBo(22vh, 15vw);
+            .circle {
+                @include wiHe(116.46px, 116.46px);
+            }
+        }
+        .circle-3 {
+            @include riTo(27vh, -7vw);
+            .circle {
+                @include wiHe(145px, 145px);
+            }
+        }
+    }
+    @media (max-width: 915px) and (min-height: 410px) {
+        .page-number-big {
+            @include riBo(2.5vh, 4.8vw);
+            @include fontSize(90px, 90px, 600, $fontFamilyBarlow);
+        }
+    }
+    @media (max-width: 896px) {
+        .page-number-big {
+            @include riBo(3vh, 10px);
+            @include fontSize(100px, 100px, 600, $fontFamilyBarlow);
+        }
+        .circle-1 {
+            @include riBo(-15vh, 38vw);
+            .circle {
+                @include wiHe(120px, 120px);
+            }
+        }
+        .circle-2 {
+            @include riBo(20vh, 17vw);
+            .circle {
+                @include wiHe(100px, 100px);
+            }
+        }
+        .circle-3 {
+            @include riTo(22vh, -10vw);
+            .circle {
+                @include wiHe(120px, 120px);
+            }
+        }
+    }
+    @media (max-width: 480px) {
+        .page-number-big {
+            @include riBo(3vh, 4px);
+            @include fontSize(90px, 90px, 600, $fontFamilyBarlow);
+        }
+    }
+}

@@ -1,0 +1,103 @@
+//----------------------ПЕРЕМЕННЫЕ-----------------------------
+//-цвета-
+$blackColor: #000000;
+$whiteColor: #ffffff;
+$whiteColorOpacity: #ffffffd6;
+$borderColor: #e5e5e5;
+$lineNavbarActive: #b4977b;
+$lineNavNoActive: #e5e5e5;
+$pageNumberColorNavBar: #b4977b;
+$borderBtnNav: #b4977b;
+$pageNuberTextShadow: #b4977b;
+//
+//----------
+//-шрифты-
+$fontFamilyBarlow: 'Barlow',
+sans-serif;
+//-------------------миксины-------------------------------
+//ширина и высота элемента
+@mixin wiHe($wi: 100%, $he: 100%) {
+    width: $wi;
+    height: $he;
+}
+
+//позиционирование
+@mixin leTo($top: 0, $left: 0) {
+    top: $top;
+    left: $left;
+}
+
+@mixin riTo($top: 0, $right: 0) {
+    top: $top;
+    right: $right;
+}
+
+@mixin riBo($bottom: 0, $right: 0) {
+    bottom: $bottom;
+    right: $right;
+}
+
+@mixin leBo($bottom: 0, $left: 0) {
+    bottom: $bottom;
+    left: $left;
+}
+
+//вставка изображения как фона(без ссылки на изображение)
+@mixin bgImg($bgImSize: 100% 100%, $bgPosition: center, $bgRepeat: no-repeat) {
+    background-size: $bgImSize;
+    background-position: $bgPosition;
+    background-repeat: $bgRepeat;
+}
+
+//флекс элемент по центру
+@mixin flCent($juCo: center, $alIt: center) {
+    display: flex;
+    justify-content: $juCo;
+    align-items: $alIt;
+}
+
+//флекс элемент слева снизу
+@mixin flStartCen($juCo: start, $alIt: center) {
+    display: flex;
+    justify-content: $juCo;
+    align-items: $alIt;
+}
+
+//флекс элемент: по вертикали центр, горизонтально - разнесено по краям
+@mixin flexSpBeCent($juCo: space-between, $alIt: center) {
+    display: flex;
+    justify-content: $juCo;
+    align-items: $alIt;
+}
+
+//грид элемент: по вертикали центр, горизонтально - разнесено по краям
+@mixin gridSpBeCent($juCo: space-between, $alIt: center) {
+    display: grid;
+    justify-content: $juCo;
+    align-items: $alIt;
+}
+
+//грид центр
+@mixin gridCent($juCo: center, $alIt: center) {
+    display: grid;
+    justify-content: $juCo;
+    align-items: $alIt;
+}
+
+//параметры шрифтов
+@mixin fontSize( $fs: 16px, $liHe: 24px, $fWe: 400, $fontFamily: $fontFamilyBarlow) {
+    font-size: $fs;
+    font-weight: $fWe;
+    line-height: $liHe;
+    font-style: normal;
+    font-family: $fontFamily;
+}
+
+//обводка текста
+@mixin textShadowPageNumber {
+    text-shadow: -0 -2px 0 $pageNuberTextShadow, 0 -2px 0 $pageNuberTextShadow, -0 2px 0 $pageNuberTextShadow, 0 2px 0 $pageNuberTextShadow, -2px -0 0 $pageNuberTextShadow, 2px -0 0 $pageNuberTextShadow, -2px 0 0 $pageNuberTextShadow, 2px 0 0 $pageNuberTextShadow, -1px -2px 0 $pageNuberTextShadow, 1px -2px 0 $pageNuberTextShadow, -1px 2px 0 $pageNuberTextShadow, 1px 2px 0 $pageNuberTextShadow, -2px -1px 0 $pageNuberTextShadow, 2px -1px 0 $pageNuberTextShadow, -2px 1px 0 $pageNuberTextShadow, 2px 1px 0 $pageNuberTextShadow, -2px -2px 0 $pageNuberTextShadow, 2px -2px 0 $pageNuberTextShadow, -2px 2px 0 $pageNuberTextShadow, 2px 2px 0 $pageNuberTextShadow, -2px -2px 0 $pageNuberTextShadow, 2px -2px 0 $pageNuberTextShadow, -2px 2px 0 $pageNuberTextShadow, 2px 2px 0 $pageNuberTextShadow;
+}
+
+@mixin textShadowBlack1px {
+    text-shadow: -0 -1px 0 #000000, 0 -1px 0 #000000, -0 1px 0 #000000, 0 1px 0 #000000, -1px -0 0 #000000, 1px -0 0 #000000, -1px 0 0 #000000, 1px 0 0 #000000, -1px -1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000, 1px 1px 0 #000000, -1px -1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000, 1px 1px 0 #000000;
+}
