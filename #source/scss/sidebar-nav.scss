@@ -329,4 +329,36 @@
             @include fontSize(9px, 11px, 300, $fontFamilyBarlow);
         }
     }
+    /*-max-height-*/
+    @media (max-height: 370px) {
+        .sidebar-nav {
+            //заголовок навигации
+            &__title {
+                @include fontSize(11px, 11px, 500, $fontFamilyBarlow);
+            }
+            //текущая страница
+            &__page {
+                @include fontSize(20px, 20px, 500, $fontFamilyBarlow);
+            }
+            //прогресссбар страниц
+            &__progress-bar-container {
+                height: 35vh;
+                margin: 0.5vh 0px;
+            }
+            //кнопка
+            &__btn {
+                @include wiHe(20px, 25px);
+                img {
+                    height: 12px;
+                }
+            }
+        }
+        //доп стили
+        .placeholder-page-nav {
+            width: 25px;
+            left: -25px;
+            margin-top: -9px;
+            @include fontSize(8px, 9px, 300, $fontFamilyBarlow);
+        }
+    }
 }

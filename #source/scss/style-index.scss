@@ -354,6 +354,28 @@ body {
             }
         }
     }
+    /*-max-height-*/
+    @media (max-height: 370px) {
+        .site-content {
+            @include wiHe;
+            padding: 0px 4px 4px 4px;
+            grid-template-columns: 25% 70%;
+            grid-template-rows: 100%;
+            &__photo {
+                @include wiHe(100%, 80%);
+                img {
+                    @include wiHe(100%, 100%);
+                }
+                &::before {
+                    @include fontSize(10px, 12px, 500, $fontFamilyBarlow);
+                }
+            }
+            &__content-container {
+                padding-top: 25px;
+                gap: 3px;
+            }
+        }
+    }
 }
 
 
@@ -558,6 +580,25 @@ body {
             }
             &__text {
                 @include fontSize(14px, 17px, 400, $fontFamilyBarlow);
+            }
+        }
+    }
+    /*-max-height-*/
+    @media (max-height: 370px) {
+        .content-container {
+            height: 100%;
+            grid-template-rows: max-content 52% max-content;
+            &__title {
+                @include fontSize(100%, 100%, 600, $fontFamilyBarlow);
+            }
+            &__text {
+                max-height: 100% !important;
+                @include fontSize(9px, 11px, 400, $fontFamilyBarlow);
+            }
+            &__btn {
+                @include wiHe(max-content, max-content);
+                padding: 1.5vh 1.7vw;
+                @include fontSize(10px, 110%, 400, $fontFamilyBarlow);
             }
         }
     }
@@ -821,6 +862,13 @@ body {
         .page-number-big {
             @include riBo(3vh, 4px);
             @include fontSize(90px, 90px, 600, $fontFamilyBarlow);
+        }
+    }
+    /*-max-height-*/
+    @media (max-height: 370px) {
+        .page-number-big {
+            @include riBo(0px, 4px);
+            @include fontSize(350%, 100%, 600, $fontFamilyBarlow);
         }
     }
 }
