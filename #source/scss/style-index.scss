@@ -236,7 +236,7 @@ body {
     }
     @media (max-width: 480px) {
         .site-content {
-            padding: 0px 8px 5vh 64px;
+            padding: 0px 8px 5vh 68px;
             grid-template-rows: max-content 1fr;
             &__photo {
                 justify-self: start;
@@ -355,7 +355,7 @@ body {
         }
     }
     /*-max-height-*/
-    @media (max-height: 370px) {
+    @media (max-height: 315px) {
         .site-content {
             @include wiHe;
             padding: 0px 4px 4px 4px;
@@ -372,6 +372,7 @@ body {
             }
             &__content-container {
                 padding-top: 25px;
+                padding-bottom: 45px;
                 gap: 3px;
             }
         }
@@ -584,9 +585,10 @@ body {
         }
     }
     /*-max-height-*/
-    @media (max-height: 370px) {
+    @media (max-height: 315px) {
         .content-container {
             height: 100%;
+            align-content: center;
             grid-template-rows: max-content 52% max-content;
             &__title {
                 @include fontSize(100%, 100%, 600, $fontFamilyBarlow);
@@ -865,10 +867,28 @@ body {
         }
     }
     /*-max-height-*/
-    @media (max-height: 370px) {
+    @media (max-height: 315px) {
         .page-number-big {
             @include riBo(0px, 4px);
             @include fontSize(350%, 100%, 600, $fontFamilyBarlow);
+        }
+    }
+    .circle-1 {
+        @include riBo(-25%, 50%);
+        .circle {
+            @include wiHe(80px, 80px);
+        }
+    }
+    .circle-2 {
+        @include riBo(15%, 20%);
+        .circle {
+            @include wiHe(60px, 60px);
+        }
+    }
+    .circle-3 {
+        @include riTo(15%, -5%);
+        .circle {
+            @include wiHe(80px, 80px);
         }
     }
 }

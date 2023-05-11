@@ -134,7 +134,7 @@
     }
     @media (max-width: 480px) {
         .header {
-            padding: 0px 4px 0px 64px;
+            padding: 0px 8px 0px 68px;
             @include riTo(2vh, 0vw);
             &__wrapper {
                 position: relative;
@@ -182,7 +182,7 @@
 
 /*----------landscape----------*/
 
-@media screen and (orientation: landscape) {
+@media screen and (orientation: landscape) and(min-height: 315px) {
     @media (max-width: 1280px) {
         .header {
             @include wiHe(34vw, max-content);
@@ -289,8 +289,13 @@
             }
         }
     }
-    /*-max-height-*/
-    @media (max-height: 370px) {
+}
+
+
+/*-max-height-*/
+
+@media screen and (orientation: landscape) and(max-height: 315px) {
+    @media (max-height: 315px) {
         .header {
             @include riTo(4px, 4px);
             &__wrapper {
@@ -391,8 +396,8 @@
         .footer {
             @include wiHe(100%, max-content);
             @include leBo(1.5vh, 0);
-            padding-left: 64px;
-            padding-right: 4px;
+            padding-left: 68px;
+            padding-right: 8px;
             &__link {
                 @include fontSize(10px, 12px, 500, $fontFamilyBarlow);
             }
@@ -403,7 +408,7 @@
 
 /*----------landscape----------*/
 
-@media screen and (orientation: landscape) {
+@media screen and (orientation: landscape) and (min-height: 315px) {
     @media (max-width: 1280px) {
         .footer {
             @include wiHe(26vw, max-content);
@@ -437,8 +442,13 @@
             }
         }
     }
-    /*-max-height-*/
-    @media (max-height: 370px) {
+}
+
+
+/*-max-height-*/
+
+@media screen and (orientation: landscape) and(max-height: 315px) {
+    @media (max-height: 315px) {
         .footer {
             @include wiHe(35vw, max-content);
             bottom: 10px;

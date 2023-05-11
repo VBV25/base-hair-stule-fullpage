@@ -217,7 +217,7 @@
     @media (max-width: 480px) {
         .saidbar-nav__wrapper1 {
             @include wiHe(60px, 100%);
-            padding: 3vh 0px;
+            padding: 8px 0px;
         }
         .sidebar-nav {
             //заголовок навигации
@@ -330,7 +330,7 @@
         }
     }
     /*-max-height-*/
-    @media (max-height: 370px) {
+    @media (max-height: 315px) {
         .sidebar-nav {
             //заголовок навигации
             &__title {

@@ -281,7 +281,7 @@ ul li {
   .saidbar-nav__wrapper1 {
     width: 60px;
     height: 100%;
-    padding: 3vh 0px; }
+    padding: 8px 0px; }
   .sidebar-nav__title {
     font-size: 14px;
     font-weight: 500;
@@ -390,7 +390,7 @@ ul li {
 @media screen and (orientation: landscape) {
   /*-max-height-*/ }
 
-@media screen and (orientation: landscape) and (max-height: 370px) {
+@media screen and (orientation: landscape) and (max-height: 315px) {
   .sidebar-nav__title {
     font-size: 11px;
     font-weight: 500;
@@ -575,7 +575,7 @@ ul li {
 
 @media screen and (orientation: portrait) and (max-width: 480px) {
   .header {
-    padding: 0px 4px 0px 64px;
+    padding: 0px 8px 0px 68px;
     top: 2vh;
     right: 0vw; }
     .header__wrapper {
@@ -641,7 +641,7 @@ ul li {
       width: 24px; } }
 
 /*----------landscape----------*/
-@media screen and (orientation: landscape) and (max-width: 1280px) {
+@media screen and (orientation: landscape) and (min-height: 315px) and (max-width: 1280px) {
   .header {
     width: 34vw;
     height: -webkit-max-content;
@@ -661,7 +661,7 @@ ul li {
     .header__basket img {
       width: 22px; } }
 
-@media screen and (orientation: landscape) and (max-width: 1180px) {
+@media screen and (orientation: landscape) and (min-height: 315px) and (max-width: 1180px) {
   .header__link {
     font-size: 15px;
     font-weight: 500;
@@ -669,7 +669,7 @@ ul li {
     font-style: normal;
     font-family: "Barlow", sans-serif; } }
 
-@media screen and (orientation: landscape) and (max-width: 1024px) {
+@media screen and (orientation: landscape) and (min-height: 315px) and (max-width: 1024px) {
   .header {
     width: 40vw;
     height: -webkit-max-content;
@@ -688,7 +688,7 @@ ul li {
     .header__basket img {
       width: 22px; } }
 
-@media screen and (orientation: landscape) and (max-width: 896px) {
+@media screen and (orientation: landscape) and (min-height: 315px) and (max-width: 896px) {
   .header {
     width: 50vw;
     height: -webkit-max-content;
@@ -707,7 +707,7 @@ ul li {
     .header__basket img {
       width: 22px; } }
 
-@media screen and (orientation: landscape) and (max-width: 480px) {
+@media screen and (orientation: landscape) and (min-height: 315px) and (max-width: 480px) {
   .header {
     width: 100vw;
     padding: 0px 4px 0px 84px;
@@ -776,10 +776,8 @@ ul li {
     .header__basket img {
       width: 24px; } }
 
-@media screen and (orientation: landscape) {
-  /*-max-height-*/ }
-
-@media screen and (orientation: landscape) and (max-height: 370px) {
+/*-max-height-*/
+@media screen and (orientation: landscape) and (max-height: 315px) and (max-height: 315px) {
   .header {
     top: 4px;
     right: 4px; }
@@ -914,8 +912,8 @@ ul li {
     height: max-content;
     bottom: 1.5vh;
     left: 0;
-    padding-left: 64px;
-    padding-right: 4px; }
+    padding-left: 68px;
+    padding-right: 8px; }
     .footer__link {
       font-size: 10px;
       font-weight: 500;
@@ -924,7 +922,7 @@ ul li {
       font-family: "Barlow", sans-serif; } }
 
 /*----------landscape----------*/
-@media screen and (orientation: landscape) and (max-width: 1280px) {
+@media screen and (orientation: landscape) and (min-height: 315px) and (max-width: 1280px) {
   .footer {
     width: 26vw;
     height: -webkit-max-content;
@@ -933,7 +931,7 @@ ul li {
     bottom: 9vh;
     left: 24vw; } }
 
-@media screen and (orientation: landscape) and (max-width: 1024px) {
+@media screen and (orientation: landscape) and (min-height: 315px) and (max-width: 1024px) {
   .footer {
     width: 26vw;
     height: -webkit-max-content;
@@ -948,7 +946,7 @@ ul li {
       font-style: normal;
       font-family: "Barlow", sans-serif; } }
 
-@media screen and (orientation: landscape) and (max-width: 896px) {
+@media screen and (orientation: landscape) and (min-height: 315px) and (max-width: 896px) {
   .footer {
     width: 29vw;
     height: -webkit-max-content;
@@ -963,7 +961,7 @@ ul li {
       font-style: normal;
       font-family: "Barlow", sans-serif; } }
 
-@media screen and (orientation: landscape) and (max-width: 480px) {
+@media screen and (orientation: landscape) and (min-height: 315px) and (max-width: 480px) {
   .footer {
     width: 45vw;
     height: -webkit-max-content;
@@ -978,10 +976,8 @@ ul li {
       font-style: normal;
       font-family: "Barlow", sans-serif; } }
 
-@media screen and (orientation: landscape) {
-  /*-max-height-*/ }
-
-@media screen and (orientation: landscape) and (max-height: 370px) {
+/*-max-height-*/
+@media screen and (orientation: landscape) and (max-height: 315px) and (max-height: 315px) {
   .footer {
     width: 35vw;
     height: -webkit-max-content;
@@ -1260,7 +1256,7 @@ body {
 
 @media screen and (orientation: portrait) and (max-width: 480px) {
   .site-content {
-    padding: 0px 8px 5vh 64px;
+    padding: 0px 8px 5vh 68px;
     -ms-grid-rows: -webkit-max-content 1fr;
     -ms-grid-rows: max-content 1fr;
     grid-template-rows: -webkit-max-content 1fr;
@@ -1398,7 +1394,7 @@ body {
 @media screen and (orientation: landscape) {
   /*-max-height-*/ }
 
-@media screen and (orientation: landscape) and (max-height: 370px) {
+@media screen and (orientation: landscape) and (max-height: 315px) {
   .site-content {
     width: 100%;
     height: 100%;
@@ -1421,6 +1417,7 @@ body {
         font-family: "Barlow", sans-serif; }
     .site-content__content-container {
       padding-top: 25px;
+      padding-bottom: 45px;
       gap: 3px; } }
 
 /*-----------------------------------------*/
@@ -1720,9 +1717,11 @@ body {
 @media screen and (orientation: landscape) {
   /*-max-height-*/ }
 
-@media screen and (orientation: landscape) and (max-height: 370px) {
+@media screen and (orientation: landscape) and (max-height: 315px) {
   .content-container {
     height: 100%;
+    -ms-flex-line-pack: center;
+    align-content: center;
     -ms-grid-rows: -webkit-max-content 52% -webkit-max-content;
     -ms-grid-rows: max-content 52% max-content;
     grid-template-rows: -webkit-max-content 52% -webkit-max-content;
@@ -2046,7 +2045,7 @@ body {
 @media screen and (orientation: landscape) {
   /*-max-height-*/ }
 
-@media screen and (orientation: landscape) and (max-height: 370px) {
+@media screen and (orientation: landscape) and (max-height: 315px) {
   .page-number-big {
     bottom: 0px;
     right: 4px;
@@ -2055,3 +2054,23 @@ body {
     line-height: 100%;
     font-style: normal;
     font-family: "Barlow", sans-serif; } }
+
+@media screen and (orientation: landscape) {
+  .circle-1 {
+    bottom: -25%;
+    right: 50%; }
+    .circle-1 .circle {
+      width: 80px;
+      height: 80px; }
+  .circle-2 {
+    bottom: 15%;
+    right: 20%; }
+    .circle-2 .circle {
+      width: 60px;
+      height: 60px; }
+  .circle-3 {
+    top: 15%;
+    right: -5%; }
+    .circle-3 .circle {
+      width: 80px;
+      height: 80px; } }
