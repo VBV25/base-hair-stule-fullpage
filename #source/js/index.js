@@ -288,6 +288,7 @@ $(document).ready(function() {
                 //внутренний размер окна без полос прокрутки
                 var windowInnerWidth = document.documentElement.clientWidth;
                 var windowInnerHeight = document.documentElement.clientHeight;
+
                 //
                 //
                 //ширина прогрессбара
@@ -350,4 +351,78 @@ $(document).ready(function() {
         },
         false
     );
+
+    //
+    window.scroll(function() {
+        var massTextBlock = [];
+        $('.content-container__text').each(function(lenghtBlock) {
+            massTextBlock.push(this);
+        });
+        $.each(massTextBlock, function(index, elementText) {
+            var textBlockHeight = $(elementText).outerHeight(true);
+            //если меньше предельного значения скролл не добавляется
+            //внутренний размер окна без полос прокрутки
+            var windowInnerWidth = document.documentElement.clientWidth;
+            var windowInnerHeight = document.documentElement.clientHeight;
+
+            //
+            //
+            //ширина прогрессбара
+            var sideBarWidth = $('.saidbar-nav__wrapper1').css('width');
+            //
+
+            //узнаем максимальную высоту контента с текстом
+            //получаем значения грид размеров сетки по высоте
+            var gridRowsHeight = $('.content-container').css('grid-template-rows');
+            //образуем массив из значений разбивая значения после знаков px
+            var massgridRowsHeight = gridRowsHeight.split('px');
+            //выявляем максимально допустмое значение блока с текстом
+            var maxHeightTextContainer = massgridRowsHeight[1];
+            //
+            //
+            var widthContentContainer = $('.content-container').css('width');
+
+            //
+            //
+            if (windowInnerHeight <= 315 && windowInnerWidth > windowInnerHeight) {
+                $('.scroller').css('height', windowInnerHeight);
+                $('.section')
+                    .css('height', windowInnerHeight)
+                    .css('width', windowInnerWidth)
+                    .css('padding-left', sideBarWidth);
+                $('.header').css('width', widthContentContainer);
+                $('.footer').css('left', sideBarWidth);
+                if (textBlockHeight < maxHeightTextContainer) {
+                    $(elementText).css('overflow-y', 'unset');
+                } else {
+                    $(elementText).css('overflow-y', 'scroll');
+                }
+            } else {
+                $('.scroller').removeAttr('style');
+                $('.section').removeAttr('style');
+                $('.header').removeAttr('style');
+                $('.footer').removeAttr('style');
+                //
+                if (windowInnerHeight >= 580) {
+                    if (textBlockHeight < 290) {
+                        $(elementText).css('overflow-y', 'unset');
+                    } else {
+                        $(elementText).css('overflow-y', 'scroll');
+                    }
+                } else if (windowInnerHeight < 580 && 400 <= windowInnerHeight) {
+                    if (textBlockHeight < 200) {
+                        $(elementText).css('overflow-y', 'unset');
+                    } else {
+                        $(elementText).css('overflow-y', 'scroll');
+                    }
+                } else if (windowInnerHeight < 400 && 370 <= windowInnerHeight) {
+                    if (textBlockHeight < 120) {
+                        $(elementText).css('overflow-y', 'unset');
+                    } else {
+                        $(elementText).css('overflow-y', 'scroll');
+                    }
+                }
+            }
+        });
+    });
 });
