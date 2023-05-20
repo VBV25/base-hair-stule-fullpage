@@ -219,7 +219,6 @@ $(document).ready(function() {
     });
     //функция перестроения блоков и изменения их размеров в зависимости от размеров окна
     function windowSize() {
-        console.log('grgrgrgrgyrgjgh');
         var massTextBlock = [];
         $('.content-container__text').each(function(lenghtBlock) {
             massTextBlock.push(this);
@@ -334,11 +333,21 @@ $(document).ready(function() {
     );
 
     //
+    var windowInnerWidth = document.documentElement.clientWidth;
+    var windowInnerHeight = document.documentElement.clientHeight;
+    //
+
     $('.scroller').scroll(function() {
-        var windowInnerWidth = document.documentElement.clientWidth;
-        var windowInnerHeight = document.documentElement.clientHeight;
+        var windowInnerHeight2 = document.documentElement.clientHeight;
         if (windowInnerWidth > windowInnerHeight) {
-            windowSize();
+            if (windowInnerHeight2 > windowInnerHeight) {
+                windowSize();
+                console.log('увеличение окна !!!!!');
+            } else if (windowInnerHeight2 < windowInnerHeight) {
+                windowSize();
+                console.log('уменьшение окна !!!!!');
+            }
         }
+        //
     });
 });
