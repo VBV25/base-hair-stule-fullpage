@@ -336,7 +336,12 @@ $(document).ready(function() {
     var windowInnerWidth = document.documentElement.clientWidth;
     var windowInnerHeight = document.documentElement.clientHeight;
     //
-
+    $(document).touchstart(function() {
+        alert('касание');
+    });
+    //
+    //
+    //
     $('.scroller').scroll(function() {
         //var windowInnerHeight2 = document.documentElement.clientHeight;
 
@@ -350,13 +355,13 @@ $(document).ready(function() {
                 $('body').css('background-color', 'red');
             }
             /*
-                              if (windowInnerHeight2 > windowInnerHeight) {
-                                  windowSize();
-                                  console.log('увеличение окна !!!!!');
-                              } else if (windowInnerHeight2 < windowInnerHeight) {
-                                  windowSize();
-                                  console.log('уменьшение окна !!!!!');
-                              }*/
+                                    if (windowInnerHeight2 > windowInnerHeight) {
+                                        windowSize();
+                                        console.log('увеличение окна !!!!!');
+                                    } else if (windowInnerHeight2 < windowInnerHeight) {
+                                        windowSize();
+                                        console.log('уменьшение окна !!!!!');
+                                    }*/
         }
         //
     });
