@@ -218,6 +218,17 @@ $(document).ready(function() {
         massTextBlock.push(this);
     });
     //функция перестроения блоков и изменения их размеров в зависимости от размеров окна
+    function bodyHeight() {
+        var windowInnerWidth = document.documentElement.clientWidth;
+        var windowInnerHeight = document.documentElement.clientHeight;
+
+        if (windowInnerWidth > windowInnerHeight && windowInnerHeight <= 315) {
+            $('body').css('height', windowInnerHeight);
+        } else {
+            $('body').css('height', '');
+        }
+    }
+
     function windowSize() {
         var massTextBlock = [];
         $('.content-container__text').each(function(lenghtBlock) {
@@ -320,13 +331,14 @@ $(document).ready(function() {
             }
         });
     }
-
+    bodyHeight();
     windowSize();
 
     //проверка на странице блока с текстом на превышение  допустимой размерности при изменении окна или ориентации устройства
     window.addEventListener(
         'resize',
         function() {
+            bodyHeight();
             windowSize();
         },
         false
@@ -335,14 +347,4 @@ $(document).ready(function() {
     //
     //
     //
-
-    var windowInnerWidth = document.documentElement.clientWidth;
-    var windowInnerHeight = document.documentElement.clientHeight;
-    $('.scroller').scroll(function() {
-        if (windowInnerWidth > windowInnerHeight && windowInnerHeight <= 315) {
-            $('body').css('border', '1px solid rgba(0,0,0,0)');
-        } else {
-            $('body').css('border', '');
-        }
-    });
 });
