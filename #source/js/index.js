@@ -338,15 +338,25 @@ $(document).ready(function() {
     //
 
     $('.scroller').scroll(function() {
-        var windowInnerHeight2 = document.documentElement.clientHeight;
+        //var windowInnerHeight2 = document.documentElement.clientHeight;
+
+        var first = $('.scroller').css('height');
+        var second = $('.section').css('height');
+        alert(
+            'vw=' + windowInnerHeight + ' ; sect=' + second + ' ; scroll=' + first
+        );
         if (windowInnerWidth > windowInnerHeight) {
-            if (windowInnerHeight2 > windowInnerHeight) {
-                windowSize();
-                console.log('увеличение окна !!!!!');
-            } else if (windowInnerHeight2 < windowInnerHeight) {
-                windowSize();
-                console.log('уменьшение окна !!!!!');
+            if (first < windowInnerHeight || second < windowInnerHeight) {
+                $('body').css('background-color', 'red');
             }
+            /*
+                              if (windowInnerHeight2 > windowInnerHeight) {
+                                  windowSize();
+                                  console.log('увеличение окна !!!!!');
+                              } else if (windowInnerHeight2 < windowInnerHeight) {
+                                  windowSize();
+                                  console.log('уменьшение окна !!!!!');
+                              }*/
         }
         //
     });
