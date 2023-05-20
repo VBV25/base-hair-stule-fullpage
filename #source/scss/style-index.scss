@@ -68,10 +68,11 @@ body {
 
 /*----контент----*/
 
+//
 .section {
     position: relative;
     z-index: 15;
-    @include wiHe(100vw, 100vh);
+    @include wiHe(100vw, 100%);
     min-height: 100% !important;
     max-height: 100% !important;
 }
@@ -122,7 +123,7 @@ body {
 @media screen and (orientation: portrait) {
     @media (max-width: 1280px) {
         .section {
-            @include wiHe(100vw, 100vh);
+            @include wiHe(100vw, 100%);
             grid-template-columns: 15vw 1fr;
         }
         .site-content {
@@ -305,7 +306,7 @@ body {
     }
     @media (max-width: 1280px) {
         .section {
-            @include wiHe(100vw, 100vh);
+            @include wiHe(100vw, 100%);
             grid-template-columns: 15vw 1fr;
         }
         .site-content {

@@ -1048,7 +1048,7 @@ body {
   position: relative;
   z-index: 15;
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   min-height: 100% !important;
   max-height: 100% !important; }
 
@@ -1107,7 +1107,7 @@ body {
 @media screen and (orientation: portrait) and (max-width: 1280px) {
   .section {
     width: 100vw;
-    height: 100vh;
+    height: 100%;
     -ms-grid-columns: 15vw 1fr;
     grid-template-columns: 15vw 1fr; }
   .site-content {
@@ -1332,7 +1332,7 @@ body {
 @media screen and (orientation: landscape) and (max-width: 1280px) {
   .section {
     width: 100vw;
-    height: 100vh;
+    height: 100%;
     -ms-grid-columns: 15vw 1fr;
     grid-template-columns: 15vw 1fr; }
   .site-content {

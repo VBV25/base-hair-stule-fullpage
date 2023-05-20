@@ -253,8 +253,8 @@ $(document).ready(function() {
                 $('.scroller').css('height', windowInnerHeight);
                 $('.section')
                     .css('width', windowInnerWidth)
-                    .css('padding-left', sideBarWidth)
-                    .css('height', windowInnerHeight);
+                    .css('padding-left', sideBarWidth);
+                //.css('height', windowInnerHeight);
                 $('.header').css('width', widthContentContainer);
                 $('.footer').css('left', sideBarWidth);
                 if (textBlockHeight < maxHeightTextContainer) {
@@ -307,8 +307,8 @@ $(document).ready(function() {
                     $('.scroller').css('height', windowInnerHeight);
                     $('.section')
                         .css('width', windowInnerWidth)
-                        .css('padding-left', sideBarWidth)
-                        .css('height', windowInnerHeight);
+                        .css('padding-left', sideBarWidth);
+                    //.css('height', windowInnerHeight);
                     $('.header').css('width', widthContentContainer);
                     $('.footer').css('left', sideBarWidth);
                     if (textBlockHeight < maxHeightTextContainer) {
@@ -335,6 +335,7 @@ $(document).ready(function() {
     //
     //
     //
+    /*
     var windowInnerWidth = document.documentElement.clientWidth;
     var windowInnerHeight = document.documentElement.clientHeight;
     $('.scroller').scroll(function() {
@@ -416,141 +417,93 @@ $(document).ready(function() {
             }
         }
     });
-
+*/
     //
 });
 
-/*-
-  if (windowInnerWidth > windowInnerHeight && windowInnerHeight <= 315) {
-    $('.scroller').css(
-        'height', //windowInnerHeight
-        '100vh'
-    );
-    $('.section').css(
-        'height', //windowInnerHeight
-        '100vh'
-    );
-} else {
-    $('.scroller').removeAttr('style');
-    $('.section').removeAttr('style');
+var windowInnerWidth = document.documentElement.clientWidth;
+var windowInnerHeight = document.documentElement.clientHeight;
+var scrollerBlock = document.getElementById('scroller');
 
+scrollerBlock.addEventListener('touchstart', function() {
+    console.log('111111');
     //
-    if (windowInnerHeight <= 315) {
-        //
-        $('.scroller').css(
-            'height', //windowInnerHeight
-            '100vh'
-        );
-        $('.section').css(
-            'height', //windowInnerHeight
-            '100vh'
-        );
+    if (windowInnerWidth > windowInnerHeight) {
+        //&& windowInnerHeight <= 315
+        var t2 = document.documentElement.clientHeight;
+
+        if (windowInnerHeight > t2) {
+            scrollerBlock.style.height = '100vh';
+            console.log('блок меньше окна');
+            $('.content-container__btn').css('border', '3px solid blue');
+            return false;
+        } else if (t2 >= windowInnerHeight) {
+            scrollerBlock.style.height = t2;
+            console.log('блок больше или равен окну');
+            $('.content-container__btn').css('border', '3px solid red');
+            return false;
+        }
     }
-}*/
-//
-//
-//
-//
-//
-/*
-var massTextBlock = [];
-        $('.content-container__text').each(function(lenghtBlock) {
-            massTextBlock.push(this);
-        });
-        $.each(massTextBlock, function(index, elementText) {
-            var textBlockHeight = $(elementText).outerHeight(true);
-            //если меньше предельного значения скролл не добавляется
-            //внутренний размер окна без полос прокрутки
-            var windowInnerWidth = document.documentElement.clientWidth;
-            var windowInnerHeight = document.documentElement.clientHeight;
+});
 
-            //
-            //
-            //ширина прогрессбара
-            var sideBarWidth = $('.saidbar-nav__wrapper1').css('width');
-            //
+scrollerBlock.addEventListener('touchend', function() {
+    console.log('222222');
+    //
+    if (windowInnerWidth > windowInnerHeight) {
+        //&& windowInnerHeight <= 315
+        var t2 = document.documentElement.clientHeight;
 
-            //узнаем максимальную высоту контента с текстом
-            //получаем значения грид размеров сетки по высоте
-            var gridRowsHeight = $('.content-container').css('grid-template-rows');
-            //образуем массив из значений разбивая значения после знаков px
-            var massgridRowsHeight = gridRowsHeight.split('px');
-            //выявляем максимально допустмое значение блока с текстом
-            var maxHeightTextContainer = massgridRowsHeight[1];
-            //
-            //
-            var widthContentContainer = $('.content-container').css('width');
+        if (windowInnerHeight > t2) {
+            scrollerBlock.style.height = '100vh';
+            console.log('блок меньше окна');
+            $('.content-container__btn').css('border', '3px solid blue');
+            return false;
+        } else if (t2 >= windowInnerHeight) {
+            scrollerBlock.style.height = t2;
+            console.log('блок больше или равен окну');
+            $('.content-container__btn').css('border', '3px solid red');
+            return false;
+        }
+    }
+});
 
-            //
-            //
-            if (windowInnerHeight <= 315 && windowInnerWidth > windowInnerHeight) {
-                $('.scroller').css('height', windowInnerHeight);
-                $('.section')
-                    .css('width', windowInnerWidth)
-                    .css('padding-left', sideBarWidth)
-                    .css('height', windowInnerHeight);
-                $('.header').css('width', widthContentContainer);
-                $('.footer').css('left', sideBarWidth);
-                if (textBlockHeight < maxHeightTextContainer) {
-                    $(elementText).css('overflow-y', 'unset');
-                } else {
-                    $(elementText).css('overflow-y', 'scroll');
-                }
-            } else {
-                $('.scroller').removeAttr('style');
-                $('.section').removeAttr('style');
-                $('.header').removeAttr('style');
-                $('.footer').removeAttr('style');
-                //
-                if (windowInnerHeight >= 580) {
-                    if (textBlockHeight < 290) {
-                        $(elementText).css('overflow-y', 'unset');
-                    } else {
-                        $(elementText).css('overflow-y', 'scroll');
-                    }
-                } else if (windowInnerHeight < 580 && 400 <= windowInnerHeight) {
-                    if (textBlockHeight < 200) {
-                        $(elementText).css('overflow-y', 'unset');
-                    } else {
-                        $(elementText).css('overflow-y', 'scroll');
-                    }
-                } else if (windowInnerHeight < 400 && 370 <= windowInnerHeight) {
-                    if (textBlockHeight < 120) {
-                        $(elementText).css('overflow-y', 'unset');
-                    } else {
-                        $(elementText).css('overflow-y', 'scroll');
-                    }
-                } else if (windowInnerHeight <= 315) {
-                    //ширина прогрессбара
-                    var sideBarWidth = $('.saidbar-nav__wrapper1').css('width');
-                    //
+scrollerBlock.addEventListener('touchmove', function() {
+    console.log('4444444');
+    //
+    if (windowInnerWidth > windowInnerHeight) {
+        //&& windowInnerHeight <= 315
+        var t2 = document.documentElement.clientHeight;
 
-                    //узнаем максимальную высоту контента с текстом
-                    //получаем значения грид размеров сетки по высоте
-                    var gridRowsHeight =
-                        $('.content-container').css('grid-template-rows');
-                    //образуем массив из значений разбивая значения после знаков px
-                    var massgridRowsHeight = gridRowsHeight.split('px');
-                    //выявляем максимально допустмое значение блока с текстом
-                    var maxHeightTextContainer = massgridRowsHeight[1];
-                    //
-                    //
-                    var widthContentContainer = $('.content-container').css('width');
+        if (windowInnerHeight > t2) {
+            scrollerBlock.style.height = '100vh';
+            console.log('блок меньше окна');
+            $('.content-container__btn').css('border', '3px solid blue');
+            return false;
+        } else if (t2 >= windowInnerHeight) {
+            scrollerBlock.style.height = t2;
+            console.log('блок больше или равен окну');
+            $('.content-container__btn').css('border', '3px solid red');
+            return false;
+        }
+    }
+});
+window.addEventListener('touchmove', function() {
+    console.log('4444444');
+    //
+    if (windowInnerWidth > windowInnerHeight) {
+        //&& windowInnerHeight <= 315
+        var t2 = document.documentElement.clientHeight;
 
-                    //
-                    $('.scroller').css('height', windowInnerHeight);
-                    $('.section')
-                        .css('width', windowInnerWidth)
-                        .css('padding-left', sideBarWidth)
-                        .css('height', windowInnerHeight);
-                    $('.header').css('width', widthContentContainer);
-                    $('.footer').css('left', sideBarWidth);
-                    if (textBlockHeight < maxHeightTextContainer) {
-                        $(elementText).css('overflow-y', 'unset');
-                    } else {
-                        $(elementText).css('overflow-y', 'scroll');
-                    }
-                }
-            }
-        });
-*/
+        if (windowInnerHeight > t2) {
+            scrollerBlock.style.height = '100vh';
+            console.log('блок меньше окна');
+            $('.content-container__btn').css('border', '3px solid blue');
+            return false;
+        } else if (t2 >= windowInnerHeight) {
+            scrollerBlock.style.height = t2;
+            console.log('блок больше или равен окну');
+            $('.content-container__btn').css('border', '3px solid red');
+            return false;
+        }
+    }
+});
