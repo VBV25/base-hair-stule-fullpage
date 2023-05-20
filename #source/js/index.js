@@ -250,11 +250,17 @@ $(document).ready(function() {
             //
             //
             if (windowInnerHeight <= 315 && windowInnerWidth > windowInnerHeight) {
-                $('.scroller').css('height', windowInnerHeight);
+                $('.scroller').css(
+                    'height', //windowInnerHeight
+                    '100vh'
+                );
                 $('.section')
-                    .css('height', windowInnerHeight)
                     .css('width', windowInnerWidth)
-                    .css('padding-left', sideBarWidth);
+                    .css('padding-left', sideBarWidth)
+                    .css(
+                        'height', //windowInnerHeight
+                        '100vh'
+                    );
                 $('.header').css('width', widthContentContainer);
                 $('.footer').css('left', sideBarWidth);
                 if (textBlockHeight < maxHeightTextContainer) {
@@ -304,9 +310,15 @@ $(document).ready(function() {
                     var widthContentContainer = $('.content-container').css('width');
 
                     //
-                    $('.scroller').css('height', windowInnerHeight);
+                    $('.scroller').css(
+                        'height', //windowInnerHeight
+                        '100vh'
+                    );
                     $('.section')
-                        .css('height', windowInnerHeight)
+                        .css(
+                            'height', //windowInnerHeight
+                            '100vh'
+                        )
                         .css('width', windowInnerWidth)
                         .css('padding-left', sideBarWidth);
                     $('.header').css('width', widthContentContainer);
@@ -335,23 +347,25 @@ $(document).ready(function() {
     //
     //
     //
-    var windowInnerWidth = document.documentElement.clientWidth;
-    var windowInnerHeight = document.documentElement.clientHeight;
-    $('.scroller').scroll(function() {
-        var windowInnerHeight2 = document.documentElement.clientHeight;
 
-        if (
-            (windowInnerWidth > windowInnerHeight &&
-                windowInnerHeight2 > windowInnerHeight) ||
-            windowInnerHeight2 < windowInnerHeight
-        ) {
-            windowSize();
-            $('.scroller').css('height', '100vh');
-            $('.section').css('height', '100vh');
-        } else {
-            $('.scroller').removeAttr('style');
-            $('.section').removeAttr('style');
-        }
-    });
+    /*
+      var windowInnerWidth = document.documentElement.clientWidth;
+      var windowInnerHeight = document.documentElement.clientHeight;
+      $('.scroller').scroll(function() {
+          var windowInnerHeight2 = document.documentElement.clientHeight;
+
+          if (
+              (windowInnerWidth > windowInnerHeight &&
+                  windowInnerHeight2 > windowInnerHeight) ||
+              windowInnerHeight2 < windowInnerHeight
+          ) {
+              windowSize();
+              $('.scroller').css('height', '100vh');
+              $('.section').css('height', '100vh');
+          } else {
+              $('.scroller').removeAttr('style');
+              $('.section').removeAttr('style');
+          }
+      });*/
     //
 });
