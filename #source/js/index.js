@@ -333,34 +333,25 @@ $(document).ready(function() {
     );
 
     //
+    //
+    //
     var windowInnerWidth = document.documentElement.clientWidth;
     var windowInnerHeight = document.documentElement.clientHeight;
-    //
-
-    $(document).addEventListener('touchstart', function() {
-        alert('касание');
-    });
-    //
-    //
-    //
     $('.scroller').scroll(function() {
-        //var windowInnerHeight2 = document.documentElement.clientHeight;
+        var windowInnerHeight2 = document.documentElement.clientHeight;
 
-        var first = $('.scroller').css('height');
-        var second = $('.section').css('height');
-        /*
-            if (windowInnerWidth > windowInnerHeight) {
-                if (first < windowInnerHeight || second < windowInnerHeight) {
-                    $('body').css('background-color', 'red');
-                }*/
-        /*
-                                                                                  if (windowInnerHeight2 > windowInnerHeight) {
-                                                                                      windowSize();
-                                                                                      console.log('увеличение окна !!!!!');
-                                                                                  } else if (windowInnerHeight2 < windowInnerHeight) {
-                                                                                      windowSize();
-                                                                                      console.log('уменьшение окна !!!!!');
-                                                                                  }*/
+        if (
+            (windowInnerWidth > windowInnerHeight &&
+                windowInnerHeight2 > windowInnerHeight) ||
+            windowInnerHeight2 < windowInnerHeight
+        ) {
+            windowSize();
+            $('.scroller').css('height', '100vh');
+            $('.section').css('height', '100vh');
+        } else {
+            $('.scroller').removeAttr('style');
+            $('.section').removeAttr('style');
+        }
     });
     //
 });
