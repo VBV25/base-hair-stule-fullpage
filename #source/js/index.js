@@ -337,7 +337,7 @@ $(document).ready(function() {
     //
 
     $('.scroller').mousedown(function() {
-        $('body').css('border', '6px solid red');
+        $('.content-container__btn').css('border', '3px solid red');
         //
         //
         var windowInnerWidth = document.documentElement.clientWidth;
