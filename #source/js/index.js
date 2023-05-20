@@ -343,6 +343,7 @@ $(document).ready(function() {
         var windowInnerWidth = document.documentElement.clientWidth;
         var windowInnerHeight = document.documentElement.clientHeight;
         if (windowInnerWidth > windowInnerHeight && windowInnerHeight <= 315) {
+            var windowInnerHeight = document.documentElement.clientHeight;
             $('.scroller').css(
                 'height',
                 windowInnerHeight
@@ -359,7 +360,7 @@ $(document).ready(function() {
 
             //
             if (windowInnerHeight <= 315) {
-                //
+                var windowInnerHeight = document.documentElement.clientHeight;
                 $('.scroller').css(
                     'height',
                     windowInnerHeight
