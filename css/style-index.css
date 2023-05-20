@@ -1029,6 +1029,8 @@ body {
 /*---скролл поблочно---*/
 .scroller {
   height: 100vh;
+  min-height: 100%;
+  max-height: 100%;
   overflow-x: hidden;
   -webkit-scroll-snap-type: y mandatory;
   -ms-scroll-snap-type: y mandatory;
@@ -1046,7 +1048,9 @@ body {
   position: relative;
   z-index: 15;
   width: 100vw;
-  height: 100vh; }
+  height: 100vh;
+  min-height: 100%;
+  max-height: 100%; }
 
 .site-content {
   width: 100vw;

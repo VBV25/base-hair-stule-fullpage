@@ -50,6 +50,8 @@ body {
 
 .scroller {
     height: 100vh;
+    min-height: 100%;
+    max-height: 100%;
     overflow-x: hidden;
     scroll-snap-type: y mandatory;
     scroll-behavior: smooth;
@@ -70,6 +72,8 @@ body {
     position: relative;
     z-index: 15;
     @include wiHe(100vw, 100vh);
+    min-height: 100%;
+    max-height: 100%;
 }
 
 .site-content {
