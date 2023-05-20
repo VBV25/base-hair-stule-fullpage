@@ -1026,9 +1026,6 @@ body {
   -o-transition: top 1s ease 0s;
   transition: top 1s ease 0s; }
 
-.height {
-  height: 100vh !important; }
-
 /*---скролл поблочно---*/
 .scroller {
   height: 100vh;
