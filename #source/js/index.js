@@ -250,17 +250,11 @@ $(document).ready(function() {
             //
             //
             if (windowInnerHeight <= 315 && windowInnerWidth > windowInnerHeight) {
-                $('.scroller').css(
-                    'height', //windowInnerHeight
-                    '100vh'
-                );
+                $('.scroller').css('height', windowInnerHeight);
                 $('.section')
                     .css('width', windowInnerWidth)
                     .css('padding-left', sideBarWidth)
-                    .css(
-                        'height', //windowInnerHeight
-                        '100vh'
-                    );
+                    .css('height', windowInnerHeight);
                 $('.header').css('width', widthContentContainer);
                 $('.footer').css('left', sideBarWidth);
                 if (textBlockHeight < maxHeightTextContainer) {
@@ -310,15 +304,9 @@ $(document).ready(function() {
                     var widthContentContainer = $('.content-container').css('width');
 
                     //
-                    $('.scroller').css(
-                        'height', //windowInnerHeight
-                        '100vh'
-                    );
+                    $('.scroller').css('height', windowInnerHeight);
                     $('.section')
-                        .css(
-                            'height', //windowInnerHeight
-                            '100vh'
-                        )
+                        .css('height', windowInnerHeight)
                         .css('width', windowInnerWidth)
                         .css('padding-left', sideBarWidth);
                     $('.header').css('width', widthContentContainer);
@@ -348,24 +336,36 @@ $(document).ready(function() {
     //
     //
 
-    /*
-      var windowInnerWidth = document.documentElement.clientWidth;
-      var windowInnerHeight = document.documentElement.clientHeight;
-      $('.scroller').scroll(function() {
-          var windowInnerHeight2 = document.documentElement.clientHeight;
+    $('.scroller').scroll(function() {
+        var windowInnerWidth = document.documentElement.clientWidth;
+        var windowInnerHeight = document.documentElement.clientHeight;
+        windowSize();
+        if (windowInnerWidth > windowInnerHeight && windowInnerHeight <= 315) {
+            $('.scroller').css(
+                'height', //windowInnerHeight
+                '100vh'
+            );
+            $('.section').css(
+                'height', //windowInnerHeight
+                '100vh'
+            );
+        } else {
+            $('.scroller').removeAttr('style');
+            $('.section').removeAttr('style');
 
-          if (
-              (windowInnerWidth > windowInnerHeight &&
-                  windowInnerHeight2 > windowInnerHeight) ||
-              windowInnerHeight2 < windowInnerHeight
-          ) {
-              windowSize();
-              $('.scroller').css('height', '100vh');
-              $('.section').css('height', '100vh');
-          } else {
-              $('.scroller').removeAttr('style');
-              $('.section').removeAttr('style');
-          }
-      });*/
+            //
+            if (windowInnerHeight <= 315) {
+                //
+                $('.scroller').css(
+                    'height', //windowInnerHeight
+                    '100vh'
+                );
+                $('.section').css(
+                    'height', //windowInnerHeight
+                    '100vh'
+                );
+            }
+        }
+    });
     //
 });
