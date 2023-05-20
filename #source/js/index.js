@@ -358,7 +358,7 @@ $(document).ready(function() {
                 );
                 console.log('блок меньше окна');
 
-                $('.content-container__btn').css('border', '3px solid green');
+                $('.content-container__btn').css('border', '3px solid blue');
                 return false;
             } else if (t2 >= windowInnerHeight) {
                 $('.scroller').css(
@@ -396,7 +396,7 @@ $(document).ready(function() {
                     );
                     console.log('блок меньше окна');
 
-                    $('.content-container__btn').css('border', '3px solid green');
+                    $('.content-container__btn').css('border', '3px solid blue');
                     return false;
                 } else if (t2 >= windowInnerHeight) {
                     $('.scroller').css(
