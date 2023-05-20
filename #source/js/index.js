@@ -335,42 +335,84 @@ $(document).ready(function() {
     //
     //
     //
-
+    var windowInnerWidth = document.documentElement.clientWidth;
+    var windowInnerHeight = document.documentElement.clientHeight;
     $('.scroller').scroll(function() {
-        $('.content-container__btn').css('border', '3px solid green');
         //
         //
-        var windowInnerWidth = document.documentElement.clientWidth;
-        var windowInnerHeight = document.documentElement.clientHeight;
+        $('.content-container__btn').removeAttr('style');
         if (windowInnerWidth > windowInnerHeight && windowInnerHeight <= 315) {
-            var windowInnerHeight2 = document.documentElement.clientHeight;
-            $('.scroller').css(
-                'height',
-                windowInnerHeight2
-                //'100vh'
-            );
-            $('.section').css(
-                'height',
-                windowInnerHeight2
-                //'100vh'
-            );
+            //&& windowInnerHeight <= 315
+            var t2 = document.documentElement.clientHeight;
+
+            if (windowInnerHeight > t2) {
+                $('.scroller').css(
+                    'height',
+                    //t2
+                    '100vh'
+                );
+                $('.section').css(
+                    'height',
+                    //t2
+                    '100vh'
+                );
+                console.log('блок меньше окна');
+
+                $('.content-container__btn').css('border', '3px solid green');
+                return false;
+            } else if (t2 >= windowInnerHeight) {
+                $('.scroller').css(
+                    'height',
+                    t2
+                    //'100vh'
+                );
+                $('.section').css(
+                    'height',
+                    t2
+                    //'100vh'
+                );
+                console.log('блок больше или равен окну');
+                $('.content-container__btn').css('border', '3px solid red');
+                return false;
+            }
         } else {
             $('.scroller').removeAttr('style');
             $('.section').removeAttr('style');
 
             //
             if (windowInnerHeight <= 315) {
-                var windowInnerHeight2 = document.documentElement.clientHeight;
-                $('.scroller').css(
-                    'height',
-                    windowInnerHeight2
-                    //'100vh'
-                );
-                $('.section').css(
-                    'height',
-                    windowInnerHeight2
-                    //'100vh'
-                );
+                var t2 = document.documentElement.clientHeight;
+
+                if (windowInnerHeight > t2) {
+                    $('.scroller').css(
+                        'height',
+                        //t2
+                        '100vh'
+                    );
+                    $('.section').css(
+                        'height',
+                        //t2
+                        '100vh'
+                    );
+                    console.log('блок меньше окна');
+
+                    $('.content-container__btn').css('border', '3px solid green');
+                    return false;
+                } else if (t2 >= windowInnerHeight) {
+                    $('.scroller').css(
+                        'height',
+                        t2
+                        //'100vh'
+                    );
+                    $('.section').css(
+                        'height',
+                        t2
+                        //'100vh'
+                    );
+                    console.log('блок больше или равен окну');
+                    $('.content-container__btn').css('border', '3px solid red');
+                    return false;
+                }
             }
         }
     });
