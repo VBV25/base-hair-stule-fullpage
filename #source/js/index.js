@@ -320,7 +320,9 @@ $(document).ready(function() {
             }
         });
     }
-
+    $(document).ready(function() {
+        windowSize();
+    });
     //проверка на странице блока с текстом на превышение  допустимой размерности при изменении окна или ориентации устройства
     window.addEventListener(
         'resize',
@@ -332,6 +334,16 @@ $(document).ready(function() {
 
     //
     $('.scroller').scroll(function() {
-        windowSize();
+        var windowInnerWidth = document.documentElement.clientWidth;
+        var windowInnerHeight = document.documentElement.clientHeight;
+        if (windowInnerWidth > windowInnerHeight) {
+            windowSize();
+            $('.scroller').css('height', '100vh');
+            $('.section').css('height', '100vh');
+            console.log('grgrgrgrgyrgjgh');
+        } else {
+            $('.scroller').removeAttr('style');
+            $('.section').removeAttr('style');
+        }
     });
 });
