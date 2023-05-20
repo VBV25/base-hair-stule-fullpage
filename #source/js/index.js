@@ -353,9 +353,12 @@ var windowInnerHeight = document.documentElement.clientHeight;
 window.addEventListener('touchstart', function() {
     if (windowInnerWidth > windowInnerHeight && windowInnerHeight <= 315) {
         var h2 = document.documentElement.clientWidth;
+        var scrollerHeight = document.getElementById('scroller');
+        scrollerHeight.style.height = '';
         if (h2 < windowInnerHeight) {}
 
-        var scrollerHeight = document.getElementById('scroller');
         scrollerHeight.style.height = '100vh';
+    } else {
+        scrollerHeight.style.height = h2;
     }
 });
