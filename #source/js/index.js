@@ -223,7 +223,7 @@ $(document).ready(function() {
         var windowInnerHeight = document.documentElement.clientHeight;
 
         if (windowInnerWidth > windowInnerHeight && windowInnerHeight <= 315) {
-            $('body').css('height', windowInnerHeight);
+            $('body').css('height', '100vh');
         } else {
             $('body').css('height', '');
         }
