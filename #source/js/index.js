@@ -291,13 +291,7 @@ $(document).ready(function() {
                     } else {
                         $(elementText).css('overflow-y', 'scroll');
                     }
-                } else if (windowInnerHeight < 400 && 370 <= windowInnerHeight) {
-                    if (textBlockHeight < 120) {
-                        $(elementText).css('overflow-y', 'unset');
-                    } else {
-                        $(elementText).css('overflow-y', 'scroll');
-                    }
-                } else if (windowInnerHeight < 370 && 315 < windowInnerHeight) {
+                } else if (windowInnerHeight < 400 && 315 < windowInnerHeight) {
                     if (textBlockHeight < 120) {
                         $(elementText).css('overflow-y', 'unset');
                     } else {
@@ -357,14 +351,14 @@ $(document).ready(function() {
 var windowInnerWidth = document.documentElement.clientWidth;
 var windowInnerHeight = document.documentElement.clientHeight;
 window.addEventListener('touchstart', function() {
-    if (windowInnerWidth > windowInnerHeight && windowInnerHeight <= 315) {
+    if (windowInnerWidth > windowInnerHeight && windowInnerHeight <= 800) {
         var h2 = document.documentElement.clientHeight;
         var scrollerHeight = document.getElementById('scroller');
         scrollerHeight.style.height = '';
-        if (h2 < windowInnerHeight) {}
-
-        scrollerHeight.style.height = '100vh';
-    } else {
-        scrollerHeight.style.height = h2;
+        if (h2 < windowInnerHeight) {
+            scrollerHeight.style.height = '100vh';
+        } else {
+            scrollerHeight.style.height = h2;
+        }
     }
 });
