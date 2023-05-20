@@ -219,6 +219,7 @@ $(document).ready(function() {
     });
     //функция перестроения блоков и изменения их размеров в зависимости от размеров окна
     function windowSize() {
+        console.log('grgrgrgrgyrgjgh');
         var massTextBlock = [];
         $('.content-container__text').each(function(lenghtBlock) {
             massTextBlock.push(this);
@@ -320,9 +321,9 @@ $(document).ready(function() {
             }
         });
     }
-    $(document).ready(function() {
-        windowSize();
-    });
+
+    windowSize();
+
     //проверка на странице блока с текстом на превышение  допустимой размерности при изменении окна или ориентации устройства
     window.addEventListener(
         'resize',
@@ -338,12 +339,6 @@ $(document).ready(function() {
         var windowInnerHeight = document.documentElement.clientHeight;
         if (windowInnerWidth > windowInnerHeight) {
             windowSize();
-            $('.scroller').css('height', '100vh');
-            $('.section').css('height', '100vh');
-            console.log('grgrgrgrgyrgjgh');
-        } else {
-            $('.scroller').removeAttr('style');
-            $('.section').removeAttr('style');
         }
     });
 });
