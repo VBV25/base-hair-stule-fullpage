@@ -340,7 +340,9 @@ $(document).ready(function() {
     var windowInnerHeight = document.documentElement.clientHeight;
     $('.scroller').scroll(function() {
         if (windowInnerWidth > windowInnerHeight && windowInnerHeight <= 315) {
-            $('body').css('border', '0.1px solid rgba(0,0,0,0)');
+            $('body').css('border', '1px solid rgba(0,0,0,0)');
+        } else {
+            $('body').css('border', '');
         }
     });
 });
