@@ -297,6 +297,12 @@ $(document).ready(function() {
                     } else {
                         $(elementText).css('overflow-y', 'scroll');
                     }
+                } else if (windowInnerHeight < 370 && 315 < windowInnerHeight) {
+                    if (textBlockHeight < 120) {
+                        $(elementText).css('overflow-y', 'unset');
+                    } else {
+                        $(elementText).css('overflow-y', 'scroll');
+                    }
                 } else if (windowInnerHeight <= 315) {
                     //ширина прогрессбара
                     var sideBarWidth = $('.saidbar-nav__wrapper1').css('width');
@@ -352,7 +358,7 @@ var windowInnerWidth = document.documentElement.clientWidth;
 var windowInnerHeight = document.documentElement.clientHeight;
 window.addEventListener('touchstart', function() {
     if (windowInnerWidth > windowInnerHeight && windowInnerHeight <= 315) {
-        var h2 = document.documentElement.clientWidth;
+        var h2 = document.documentElement.clientHeight;
         var scrollerHeight = document.getElementById('scroller');
         scrollerHeight.style.height = '';
         if (h2 < windowInnerHeight) {}
