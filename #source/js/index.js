@@ -428,7 +428,7 @@ var scrollerBlock = document.getElementById('scroller');
 scrollerBlock.addEventListener('touchstart', function() {
     console.log('111111');
     //
-    if (windowInnerWidth > windowInnerHeight) {
+    if (windowInnerWidth > windowInnerHeight && windowInnerHeight <= 315) {
         //&& windowInnerHeight <= 315
         var t2 = document.documentElement.clientHeight;
 
@@ -440,7 +440,7 @@ scrollerBlock.addEventListener('touchstart', function() {
         } else if (t2 >= windowInnerHeight) {
             scrollerBlock.style.height = t2;
             console.log('блок больше или равен окну');
-            $('.content-container__btn').css('border', '3px solid red');
+            $('.content-container__btn').css('border', '3px solid black');
             return false;
         }
     }
@@ -449,7 +449,7 @@ scrollerBlock.addEventListener('touchstart', function() {
 scrollerBlock.addEventListener('touchend', function() {
     console.log('222222');
     //
-    if (windowInnerWidth > windowInnerHeight) {
+    if (windowInnerWidth > windowInnerHeight && windowInnerHeight <= 315) {
         //&& windowInnerHeight <= 315
         var t2 = document.documentElement.clientHeight;
 
@@ -461,7 +461,7 @@ scrollerBlock.addEventListener('touchend', function() {
         } else if (t2 >= windowInnerHeight) {
             scrollerBlock.style.height = t2;
             console.log('блок больше или равен окну');
-            $('.content-container__btn').css('border', '3px solid red');
+            $('.content-container__btn').css('border', '3px solid black');
             return false;
         }
     }
@@ -470,7 +470,7 @@ scrollerBlock.addEventListener('touchend', function() {
 scrollerBlock.addEventListener('touchmove', function() {
     console.log('4444444');
     //
-    if (windowInnerWidth > windowInnerHeight) {
+    if (windowInnerWidth > windowInnerHeight && windowInnerHeight <= 315) {
         //&& windowInnerHeight <= 315
         var t2 = document.documentElement.clientHeight;
 
@@ -482,7 +482,7 @@ scrollerBlock.addEventListener('touchmove', function() {
         } else if (t2 >= windowInnerHeight) {
             scrollerBlock.style.height = t2;
             console.log('блок больше или равен окну');
-            $('.content-container__btn').css('border', '3px solid red');
+            $('.content-container__btn').css('border', '3px solid black');
             return false;
         }
     }
@@ -490,7 +490,7 @@ scrollerBlock.addEventListener('touchmove', function() {
 window.addEventListener('touchmove', function() {
     console.log('4444444');
     //
-    if (windowInnerWidth > windowInnerHeight) {
+    if (windowInnerWidth > windowInnerHeight && windowInnerHeight <= 315) {
         //&& windowInnerHeight <= 315
         var t2 = document.documentElement.clientHeight;
 
@@ -502,7 +502,7 @@ window.addEventListener('touchmove', function() {
         } else if (t2 >= windowInnerHeight) {
             scrollerBlock.style.height = t2;
             console.log('блок больше или равен окну');
-            $('.content-container__btn').css('border', '3px solid red');
+            $('.content-container__btn').css('border', '3px solid black');
             return false;
         }
     }
