@@ -336,7 +336,8 @@ $(document).ready(function() {
     var windowInnerWidth = document.documentElement.clientWidth;
     var windowInnerHeight = document.documentElement.clientHeight;
     //
-    $(document).touchstart(function() {
+
+    $(document).addEventListener('touchstart', function() {
         alert('касание');
     });
     //
@@ -347,22 +348,19 @@ $(document).ready(function() {
 
         var first = $('.scroller').css('height');
         var second = $('.section').css('height');
-        alert(
-            'vw=' + windowInnerHeight + ' ; sect=' + second + ' ; scroll=' + first
-        );
-        if (windowInnerWidth > windowInnerHeight) {
-            if (first < windowInnerHeight || second < windowInnerHeight) {
-                $('body').css('background-color', 'red');
-            }
-            /*
-                                    if (windowInnerHeight2 > windowInnerHeight) {
-                                        windowSize();
-                                        console.log('увеличение окна !!!!!');
-                                    } else if (windowInnerHeight2 < windowInnerHeight) {
-                                        windowSize();
-                                        console.log('уменьшение окна !!!!!');
-                                    }*/
-        }
-        //
+        /*
+            if (windowInnerWidth > windowInnerHeight) {
+                if (first < windowInnerHeight || second < windowInnerHeight) {
+                    $('body').css('background-color', 'red');
+                }*/
+        /*
+                                                                                  if (windowInnerHeight2 > windowInnerHeight) {
+                                                                                      windowSize();
+                                                                                      console.log('увеличение окна !!!!!');
+                                                                                  } else if (windowInnerHeight2 < windowInnerHeight) {
+                                                                                      windowSize();
+                                                                                      console.log('уменьшение окна !!!!!');
+                                                                                  }*/
     });
+    //
 });
