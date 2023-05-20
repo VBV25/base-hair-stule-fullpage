@@ -440,7 +440,7 @@ scrollerBlock.addEventListener('touchstart', function() {
         } else if (t2 >= windowInnerHeight) {
             scrollerBlock.style.height = t2;
             console.log('блок больше или равен окну');
-            $('.content-container__btn').css('border', '3px solid black');
+            $('.content-container__btn').css('border', '3px solid red');
             return false;
         }
     }
@@ -461,7 +461,7 @@ scrollerBlock.addEventListener('touchend', function() {
         } else if (t2 >= windowInnerHeight) {
             scrollerBlock.style.height = t2;
             console.log('блок больше или равен окну');
-            $('.content-container__btn').css('border', '3px solid black');
+            $('.content-container__btn').css('border', '3px solid red');
             return false;
         }
     }
@@ -482,7 +482,7 @@ scrollerBlock.addEventListener('touchmove', function() {
         } else if (t2 >= windowInnerHeight) {
             scrollerBlock.style.height = t2;
             console.log('блок больше или равен окну');
-            $('.content-container__btn').css('border', '3px solid black');
+            $('.content-container__btn').css('border', '3px solid red');
             return false;
         }
     }
@@ -502,7 +502,48 @@ window.addEventListener('touchmove', function() {
         } else if (t2 >= windowInnerHeight) {
             scrollerBlock.style.height = t2;
             console.log('блок больше или равен окну');
-            $('.content-container__btn').css('border', '3px solid black');
+            $('.content-container__btn').css('border', '3px solid red');
+            return false;
+        }
+    }
+});
+window.addEventListener('touchstart', function() {
+    console.log('111111');
+    //
+    if (windowInnerWidth > windowInnerHeight && windowInnerHeight <= 315) {
+        //&& windowInnerHeight <= 315
+        var t2 = document.documentElement.clientHeight;
+
+        if (windowInnerHeight > t2) {
+            scrollerBlock.style.height = '100vh';
+            console.log('блок меньше окна');
+            $('.content-container__btn').css('border', '3px solid blue');
+            return false;
+        } else if (t2 >= windowInnerHeight) {
+            scrollerBlock.style.height = t2;
+            console.log('блок больше или равен окну');
+            $('.content-container__btn').css('border', '3px solid red');
+            return false;
+        }
+    }
+});
+
+window.addEventListener('touchend', function() {
+    console.log('222222');
+    //
+    if (windowInnerWidth > windowInnerHeight && windowInnerHeight <= 315) {
+        //&& windowInnerHeight <= 315
+        var t2 = document.documentElement.clientHeight;
+
+        if (windowInnerHeight > t2) {
+            scrollerBlock.style.height = '100vh';
+            console.log('блок меньше окна');
+            $('.content-container__btn').css('border', '3px solid blue');
+            return false;
+        } else if (t2 >= windowInnerHeight) {
+            scrollerBlock.style.height = t2;
+            console.log('блок больше или равен окну');
+            $('.content-container__btn').css('border', '3px solid red');
             return false;
         }
     }
