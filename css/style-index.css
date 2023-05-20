@@ -1006,9 +1006,9 @@ body {
   left: 0;
   border-radius: 2px;
   background-color: #b4977b;
-  -webkit-transition: all 1s ease 0s;
-  -o-transition: all 1s ease 0s;
-  transition: all 1s ease 0s; }
+  -webkit-transition: all 0.5s ease 0s;
+  -o-transition: all 0.5s ease 0s;
+  transition: all 0.5s ease 0s; }
 
 .active-page-nav {
   position: relative !important;

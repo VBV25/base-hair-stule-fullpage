@@ -157,7 +157,7 @@ $(document).ready(function() {
                 //обращаемся к массиву прогрессбара с секциями
                 //получаем колличество объектов в массиве
                 $.each(massNavLine, function(index, elementLine) {
-                    //находим все объекты и получаем начения их атрибутов
+                    //находим все объекты и получаем значения их атрибутов
                     var massAttrSectProgressBar = $(elementLine).attr('data-id');
                     if (activeBlockContentOrLineTop === massAttrSectProgressBar) {
                         //
@@ -336,8 +336,8 @@ $(document).ready(function() {
     //
     //
 
-    $('.scroller').mousemove(function() {
-        $('.content-container__btn').css('border', '3px solid black');
+    $('.scroller').scroll(function() {
+        $('.content-container__btn').css('border', '3px solid green');
         //
         //
         var windowInnerWidth = document.documentElement.clientWidth;
